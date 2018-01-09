@@ -61,11 +61,19 @@ network BusLAN
                 positions = "0 10 20 30";
                 propagationSpeed = 2e8 mps;
                 @display("p=350,100;b=600,6;o=#408060");
-            gates:
-                ethg[numHosts];
         }
         configurator: IPv4NetworkConfigurator {
-            @display("p=121,37");
+            @display("p=59,31");
+			config = xml(
+                 "<config>"
+                +"<interface among='host[*]' address='10.1.x.x' netmask='255.255.x.x'/>"
+                //+"<interface among='cRouter bRouter' address='10.0.x.x' netmask='255.255.x.x'/>"
+                //+"<interface hosts='bRouter' towards='rRouter[0]' address='10.0.x.x' netmask='255.255.x.x'/>"
+                //"<interface hosts='rRouter[0]' towards='bRouter' address='10.0.x.x' netmask='255.255.x.x' add-static-route='off'/>"
+                //"<interface among='rRouter[*]' address='10.2.x.x' netmask='255.255.x.x' add-static-route='off'/>"
+                //"<interface among='rRouter[*] rHost' address='10.2.x.x' netmask='255.255.x.x'/>"
+                //"<route hosts='rRouter[0]' destination='10.1.0.0' netmask='255.255.0.0' gateway='bRouter'/>"
+                +"</config>");
         }
     connections:
         for i=0..numHosts-1 {
@@ -96,6 +104,35 @@ network ringLAN
             host[i-1].ethg[1] <-->  cable <--> host[i].ethg[0];
         }
         host[numHosts-1].ethg[1] <--> cable <--> host[0].ethg[0];
+}
+
+//
+// Sample ring LAN: mulitple hosts conneced. Each with two neighbours
+//
+network ringWithRoutersLAN
+{
+    parameters:
+		int numHosts;
+
+    submodules:
+        host[numHosts]: StandardHost {
+            parameters: 
+               @display("p=100,100,ri,200,200");
+        }
+        router[numHosts]: Router {
+            @display("is=s");
+            @display("p=150,150,ri,150,150");
+        }
+        configurator: IPv4NetworkConfigurator {
+            @display("p=59,31");
+        }
+    connections:
+		for i=1..numHosts-1 {
+		    router[i-1].ethg++ <--> cable <--> host[i - 1].ethg++;
+            router[i-1].ethg++ <--> cable <--> router[i].ethg++;
+        }
+        router[numHosts-1].ethg++ <--> cable <--> host[numHosts-1].ethg++;
+        router[numHosts-1].ethg++ <--> cable <--> router[0].ethg++;
 }
 
 network StarLAN
@@ -136,6 +173,10 @@ network MeshLAN
         }
 		configurator: IPv4NetworkConfigurator {
             @display("p=59,31");
+            			config = xml(
+                 "<config>"
+                +"<interface among='host[*] router' address='10.1.x.x' netmask='255.255.x.x'/>"
+                +"</config>");
         }
     
     connections:
