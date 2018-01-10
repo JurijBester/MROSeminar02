@@ -40,7 +40,8 @@ import ned.DatarateChannel;
 channel cable extends DatarateChannel
 {
     parameters:
-        delay = 0.1us;
+        //delay = 0.1us;
+        delay = 100ms;
         datarate = 100Mbps;
 }
 
@@ -168,19 +169,26 @@ network MeshLAN
         host[numHosts]: StandardHost {
             parameters: 
                @display("p=100,100,ri,200,200");
-            gates:
-                ethg[numHosts-1];
+        }
+        router[numHosts]: Router {
+            @display("is=s");
+            @display("p=150,150,ri,150,150");
         }
 		configurator: IPv4NetworkConfigurator {
             @display("p=59,31");
-            			config = xml(
-                 "<config>"
-                +"<interface among='host[*] router' address='10.1.x.x' netmask='255.255.x.x'/>"
-                +"</config>");
         }
     
     connections:
+       	//for i=1..numHosts-1 {
+		//    router[i-1].ethg++ <--> cable <--> host[i - 1].ethg++;
+        //    router[i-1].ethg++ <--> cable <--> router[i].ethg++;
+        //}
+        //router[numHosts-1].ethg++ <--> cable <--> host[numHosts-1].ethg++;
+        //router[numHosts-1].ethg++ <--> cable <--> router[0].ethg++;
+        for i=0..numHosts-1 {
+            host[i].ethg++ <--> cable <--> router[i].ethg++;
+        }
         for i=0..(numHosts-2), for j=(i)..(numHosts-2) {
-            host[i].ethg[j] <--> cable <--> host[j+1].ethg[i];
+            router[i].ethg++ <--> cable <--> router[j+1].ethg++;
         }
 }
