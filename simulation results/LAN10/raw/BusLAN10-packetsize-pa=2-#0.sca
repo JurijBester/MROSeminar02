@@ -1,0 +1,2954 @@
+version 2
+run BusLAN10-packetsize-0-20180110-20:26:53-11972
+attr configname BusLAN10-packetsize
+attr datetime 20180110-20:26:53
+attr experiment BusLAN10-packetsize
+attr inifile BusLAN.ini
+attr iterationvars $pa=2
+attr iterationvarsf pa=2-
+attr measurement $pa=2
+attr network BusLAN
+attr processid 11972
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+itervar pa 2
+param *.numHosts 10
+param **.datarate 10Mbps
+param **.host[*].pingApp[*].sendInterval "truncnormal(50ms, 25ms)"
+param **.host[*].pingApp[*].packetSize "truncnormal(512B, 256B)"
+param **.queueType "\"DropTailQueue\""
+param **.frameCapacity 10
+param **.mtu 1024B
+param **.host[*].numPingApps 2
+param **.host[*].pingApp[*].typename "\"PingApp\""
+param **.host[*].pingApp[*].count 1
+param **.host[*].pingApp[*].startTime "truncnormal(200ms, 100ms)"
+param **.host[*].pingApp[*].destAddr "\"*\""
+
+scalar BusLAN.host[0].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar BusLAN.host[0].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar BusLAN.host[0].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar BusLAN.host[0].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar BusLAN.host[0].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar BusLAN.host[0].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[0].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[0].lo0.lo rcvdPkFromHL:count 134
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar BusLAN.host[0].lo0.lo rcvdPkFromHL:sum(packetBytes) 65460
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar BusLAN.host[0].lo0.lo passedUpPk:count 134
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[0].lo0.lo passedUpPk:sum(packetBytes) 65460
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[0].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[0].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[0].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[0].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[0].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[0].eth[0].queue.dataQueue queueLength:timeavg 0.00032588296017802
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[0].eth[0].queue.dataQueue queueingTime:histogram
+field count 1076
+field mean 4.5410167834572e-006
+field stddev 3.8237826609309e-005
+field min 0
+field max 0.000494304167
+field sum 0.004886134059
+field sqrsum 1.593979254357e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.0001832959065	0
+bin	-0.0001588564523	0
+bin	-0.0001344169981	0
+bin	-0.0001099775439	0
+bin	-8.55380897e-005	0
+bin	-6.10986355e-005	0
+bin	-3.66591813e-005	0
+bin	-1.22197271e-005	1054
+bin	1.22197271e-005	3
+bin	3.66591813e-005	1
+bin	6.10986355e-005	0
+bin	8.55380897e-005	4
+bin	0.0001099775439	1
+bin	0.0001344169981	1
+bin	0.0001588564523	1
+bin	0.0001832959065	1
+bin	0.0002077353607	2
+bin	0.0002321748149	0
+bin	0.0002566142691	0
+bin	0.0002810537233	0
+bin	0.0003054931775	0
+bin	0.0003299326317	0
+bin	0.0003543720859	3
+bin	0.0003788115401	1
+bin	0.0004032509943	2
+bin	0.0004276904485	0
+bin	0.0004521299027	1
+bin	0.0004765693569	1
+bin	0.0005010088111	0
+bin	0.0005254482653	0
+bin	0.0005498877195	0
+scalar BusLAN.host[0].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[0].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].queue.dataQueue rcvdPk:count 1076
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[0].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 547488
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].mac "simulated time" 20
+scalar BusLAN.host[0].eth[0].mac full-duplex 1
+scalar BusLAN.host[0].eth[0].mac "frames/sec sent" 70.75
+scalar BusLAN.host[0].eth[0].mac "frames/sec rcvd" 72.55
+scalar BusLAN.host[0].eth[0].mac "bits/sec sent" 286596
+scalar BusLAN.host[0].eth[0].mac "bits/sec rcvd" 287517.6
+scalar BusLAN.host[0].eth[0].mac "rx channel idle (%)" 74.501064
+scalar BusLAN.host[0].eth[0].mac "rx channel utilization (%)" 25.498936
+scalar BusLAN.host[0].eth[0].mac rxPkFromHL:count 1076
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar BusLAN.host[0].eth[0].mac rxPkFromHL:sum(packetBytes) 547488
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar BusLAN.host[0].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar BusLAN.host[0].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar BusLAN.host[0].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar BusLAN.host[0].eth[0].mac txPk:count 1076
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar BusLAN.host[0].eth[0].mac txPk:sum(packetBytes) 547488
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].mac droppedPkNotForUs:count 8510
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar BusLAN.host[0].eth[0].mac droppedPkNotForUs:sum(packetBytes) 4218354
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[0].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar BusLAN.host[0].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].mac rxPkOk:count 1076
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar BusLAN.host[0].eth[0].mac rxPkOk:sum(packetBytes) 547488
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].mac passedUpPk:count 1076
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[0].eth[0].mac passedUpPk:sum(packetBytes) 547488
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar BusLAN.host[0].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar BusLAN.host[0].eth[0].encap decapPk:count 1076
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar BusLAN.host[0].eth[0].encap decapPk:sum(packetBytes) 528120
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar BusLAN.host[0].eth[0].encap encapPk:count 1076
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar BusLAN.host[0].eth[0].encap encapPk:sum(packetBytes) 528120
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar BusLAN.host[0].pingApp[0] "Pings sent" 388
+scalar BusLAN.host[0].pingApp[0] "ping loss rate (%)" 0
+scalar BusLAN.host[0].pingApp[0] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[0].pingApp[0] pingRxSeq:count 300
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[0].pingApp[0] pingTxSeq:count 300
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[0].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[0].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[0].pingApp[0] rtt:mean 0.00047989435893916
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[0].pingApp[1] "Pings sent" 384
+scalar BusLAN.host[0].pingApp[1] "ping loss rate (%)" 0
+scalar BusLAN.host[0].pingApp[1] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[0].pingApp[1] pingRxSeq:count 288
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[0].pingApp[1] pingTxSeq:count 288
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[0].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[0].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[0].pingApp[1] rtt:mean 0.0012674420875504
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[1].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar BusLAN.host[1].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar BusLAN.host[1].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar BusLAN.host[1].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar BusLAN.host[1].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar BusLAN.host[1].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[1].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[1].lo0.lo rcvdPkFromHL:count 94
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar BusLAN.host[1].lo0.lo rcvdPkFromHL:sum(packetBytes) 38484
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar BusLAN.host[1].lo0.lo passedUpPk:count 94
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[1].lo0.lo passedUpPk:sum(packetBytes) 38484
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[1].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[1].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[1].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[1].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[1].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[1].eth[0].queue.dataQueue queueLength:timeavg 0.00031307970663714
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[1].eth[0].queue.dataQueue queueingTime:histogram
+field count 1077
+field mean 4.3600593259053e-006
+field stddev 3.4224306157875e-005
+field min 0
+field max 0.000555523671
+field sum 0.004695783894
+field sqrsum 1.2807960663785e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.0002777618355	0
+bin	-0.0002407269241	0
+bin	-0.0002036920127	0
+bin	-0.0001666571013	0
+bin	-0.0001296221899	0
+bin	-9.25872785e-005	0
+bin	-5.55523671e-005	0
+bin	-1.85174557e-005	1054
+bin	1.85174557e-005	1
+bin	5.55523671e-005	1
+bin	9.25872785e-005	5
+bin	0.0001296221899	4
+bin	0.0001666571013	3
+bin	0.0002036920127	1
+bin	0.0002407269241	2
+bin	0.0002777618355	3
+bin	0.0003147967469	1
+bin	0.0003518316583	0
+bin	0.0003888665697	1
+bin	0.0004259014811	0
+bin	0.0004629363925	0
+bin	0.0004999713039	0
+bin	0.0005370062153	1
+bin	0.0005740411267	0
+bin	0.0006110760381	0
+bin	0.0006481109495	0
+bin	0.0006851458609	0
+bin	0.0007221807723	0
+bin	0.0007592156837	0
+bin	0.0007962505951	0
+bin	0.0008332855065	0
+scalar BusLAN.host[1].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[1].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].queue.dataQueue rcvdPk:count 1077
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[1].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 501912
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].mac "simulated time" 20
+scalar BusLAN.host[1].eth[0].mac full-duplex 1
+scalar BusLAN.host[1].eth[0].mac "frames/sec sent" 71.65
+scalar BusLAN.host[1].eth[0].mac "frames/sec rcvd" 73.45
+scalar BusLAN.host[1].eth[0].mac "bits/sec sent" 266662.8
+scalar BusLAN.host[1].eth[0].mac "bits/sec rcvd" 267584.4
+scalar BusLAN.host[1].eth[0].mac "rx channel idle (%)" 74.302308
+scalar BusLAN.host[1].eth[0].mac "rx channel utilization (%)" 25.697692
+scalar BusLAN.host[1].eth[0].mac rxPkFromHL:count 1077
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar BusLAN.host[1].eth[0].mac rxPkFromHL:sum(packetBytes) 501912
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar BusLAN.host[1].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar BusLAN.host[1].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar BusLAN.host[1].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar BusLAN.host[1].eth[0].mac txPk:count 1077
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar BusLAN.host[1].eth[0].mac txPk:sum(packetBytes) 501912
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].mac droppedPkNotForUs:count 8508
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar BusLAN.host[1].eth[0].mac droppedPkNotForUs:sum(packetBytes) 4309506
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[1].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar BusLAN.host[1].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].mac rxPkOk:count 1077
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar BusLAN.host[1].eth[0].mac rxPkOk:sum(packetBytes) 501912
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].mac passedUpPk:count 1077
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[1].eth[0].mac passedUpPk:sum(packetBytes) 501912
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar BusLAN.host[1].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar BusLAN.host[1].eth[0].encap decapPk:count 1077
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar BusLAN.host[1].eth[0].encap decapPk:sum(packetBytes) 482526
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar BusLAN.host[1].eth[0].encap encapPk:count 1077
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar BusLAN.host[1].eth[0].encap encapPk:sum(packetBytes) 482526
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar BusLAN.host[1].pingApp[0] "Pings sent" 406
+scalar BusLAN.host[1].pingApp[0] "ping loss rate (%)" 0
+scalar BusLAN.host[1].pingApp[0] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[1].pingApp[0] pingRxSeq:count 307
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[1].pingApp[0] pingTxSeq:count 307
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[1].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[1].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[1].pingApp[0] rtt:mean 0.0006099278812972
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[1].pingApp[1] "Pings sent" 380
+scalar BusLAN.host[1].pingApp[1] "ping loss rate (%)" 0
+scalar BusLAN.host[1].pingApp[1] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[1].pingApp[1] pingRxSeq:count 288
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[1].pingApp[1] pingTxSeq:count 288
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[1].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[1].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[1].pingApp[1] rtt:mean 0.00079021782200763
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[2].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar BusLAN.host[2].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar BusLAN.host[2].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar BusLAN.host[2].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar BusLAN.host[2].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar BusLAN.host[2].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[2].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[2].lo0.lo rcvdPkFromHL:count 132
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar BusLAN.host[2].lo0.lo rcvdPkFromHL:sum(packetBytes) 79620
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar BusLAN.host[2].lo0.lo passedUpPk:count 132
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[2].lo0.lo passedUpPk:sum(packetBytes) 79620
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[2].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[2].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[2].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[2].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[2].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[2].eth[0].queue.dataQueue queueLength:timeavg 0.00039605319876668
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[2].eth[0].queue.dataQueue queueingTime:histogram
+field count 1043
+field mean 5.688814569511e-006
+field stddev 4.3457712919843e-005
+field min 0
+field max 0.000609138692
+field sum 0.005933433596
+field sqrsum 2.001647073825e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1043
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[2].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[2].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].queue.dataQueue rcvdPk:count 1043
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[2].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 563251
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].mac "simulated time" 20
+scalar BusLAN.host[2].eth[0].mac full-duplex 1
+scalar BusLAN.host[2].eth[0].mac "frames/sec sent" 71.5
+scalar BusLAN.host[2].eth[0].mac "frames/sec rcvd" 73.3
+scalar BusLAN.host[2].eth[0].mac "bits/sec sent" 308173.6
+scalar BusLAN.host[2].eth[0].mac "bits/sec rcvd" 309095.2
+scalar BusLAN.host[2].eth[0].mac "rx channel idle (%)" 74.71732
+scalar BusLAN.host[2].eth[0].mac "rx channel utilization (%)" 25.28268
+scalar BusLAN.host[2].eth[0].mac rxPkFromHL:count 1043
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar BusLAN.host[2].eth[0].mac rxPkFromHL:sum(packetBytes) 563251
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar BusLAN.host[2].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar BusLAN.host[2].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar BusLAN.host[2].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar BusLAN.host[2].eth[0].mac txPk:count 1043
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar BusLAN.host[2].eth[0].mac txPk:sum(packetBytes) 563251
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].mac droppedPkNotForUs:count 8576
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar BusLAN.host[2].eth[0].mac droppedPkNotForUs:sum(packetBytes) 4186828
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[2].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar BusLAN.host[2].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].mac rxPkOk:count 1043
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar BusLAN.host[2].eth[0].mac rxPkOk:sum(packetBytes) 563251
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].mac passedUpPk:count 1043
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[2].eth[0].mac passedUpPk:sum(packetBytes) 563251
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar BusLAN.host[2].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar BusLAN.host[2].eth[0].encap decapPk:count 1043
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar BusLAN.host[2].eth[0].encap decapPk:sum(packetBytes) 544477
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar BusLAN.host[2].eth[0].encap encapPk:count 1043
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar BusLAN.host[2].eth[0].encap encapPk:sum(packetBytes) 544477
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar BusLAN.host[2].pingApp[0] "Pings sent" 386
+scalar BusLAN.host[2].pingApp[0] "ping loss rate (%)" 0
+scalar BusLAN.host[2].pingApp[0] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[2].pingApp[0] pingRxSeq:count 288
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[2].pingApp[0] pingTxSeq:count 288
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[2].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[2].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[2].pingApp[0] rtt:mean 0.00076467886237931
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[2].pingApp[1] "Pings sent" 400
+scalar BusLAN.host[2].pingApp[1] "ping loss rate (%)" 0
+scalar BusLAN.host[2].pingApp[1] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[2].pingApp[1] pingRxSeq:count 297
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[2].pingApp[1] pingTxSeq:count 297
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[2].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[2].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[2].pingApp[1] rtt:mean 0.0011966191451163
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[3].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar BusLAN.host[3].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar BusLAN.host[3].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar BusLAN.host[3].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar BusLAN.host[3].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar BusLAN.host[3].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[3].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[3].lo0.lo rcvdPkFromHL:count 88
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar BusLAN.host[3].lo0.lo rcvdPkFromHL:sum(packetBytes) 35456
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar BusLAN.host[3].lo0.lo passedUpPk:count 88
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[3].lo0.lo passedUpPk:sum(packetBytes) 35456
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[3].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[3].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[3].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[3].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[3].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[3].eth[0].queue.dataQueue queueLength:timeavg 0.00019646393740268
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[3].eth[0].queue.dataQueue queueingTime:histogram
+field count 1101
+field mean 2.675422537693e-006
+field stddev 2.8630713332495e-005
+field min 0
+field max 0.000525451673
+field sum 0.002945640214
+field sqrsum 9.095703527367e-007
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1101
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[3].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[3].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].queue.dataQueue rcvdPk:count 1101
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[3].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 499236
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].mac "simulated time" 20
+scalar BusLAN.host[3].eth[0].mac full-duplex 1
+scalar BusLAN.host[3].eth[0].mac "frames/sec sent" 71.65
+scalar BusLAN.host[3].eth[0].mac "frames/sec rcvd" 73.45
+scalar BusLAN.host[3].eth[0].mac "bits/sec sent" 257719.6
+scalar BusLAN.host[3].eth[0].mac "bits/sec rcvd" 258641.2
+scalar BusLAN.host[3].eth[0].mac "rx channel idle (%)" 74.212876
+scalar BusLAN.host[3].eth[0].mac "rx channel utilization (%)" 25.787124
+scalar BusLAN.host[3].eth[0].mac rxPkFromHL:count 1101
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar BusLAN.host[3].eth[0].mac rxPkFromHL:sum(packetBytes) 499236
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar BusLAN.host[3].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar BusLAN.host[3].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar BusLAN.host[3].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar BusLAN.host[3].eth[0].mac txPk:count 1101
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar BusLAN.host[3].eth[0].mac txPk:sum(packetBytes) 499236
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].mac droppedPkNotForUs:count 8460
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar BusLAN.host[3].eth[0].mac droppedPkNotForUs:sum(packetBytes) 4314858
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[3].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar BusLAN.host[3].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].mac rxPkOk:count 1101
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar BusLAN.host[3].eth[0].mac rxPkOk:sum(packetBytes) 499236
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].mac passedUpPk:count 1101
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[3].eth[0].mac passedUpPk:sum(packetBytes) 499236
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar BusLAN.host[3].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar BusLAN.host[3].eth[0].encap decapPk:count 1101
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar BusLAN.host[3].eth[0].encap decapPk:sum(packetBytes) 479418
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar BusLAN.host[3].eth[0].encap encapPk:count 1101
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar BusLAN.host[3].eth[0].encap encapPk:sum(packetBytes) 479418
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar BusLAN.host[3].pingApp[0] "Pings sent" 385
+scalar BusLAN.host[3].pingApp[0] "ping loss rate (%)" 0
+scalar BusLAN.host[3].pingApp[0] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[3].pingApp[0] pingRxSeq:count 292
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[3].pingApp[0] pingTxSeq:count 292
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[3].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[3].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[3].pingApp[0] rtt:mean 0.0005002681614854
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[3].pingApp[1] "Pings sent" 415
+scalar BusLAN.host[3].pingApp[1] "ping loss rate (%)" 0
+scalar BusLAN.host[3].pingApp[1] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[3].pingApp[1] pingRxSeq:count 322
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[3].pingApp[1] pingTxSeq:count 322
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[3].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[3].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[3].pingApp[1] rtt:mean 0.00083410061169932
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[4].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar BusLAN.host[4].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar BusLAN.host[4].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar BusLAN.host[4].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar BusLAN.host[4].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar BusLAN.host[4].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[4].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[4].lo0.lo rcvdPkFromHL:count 132
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar BusLAN.host[4].lo0.lo rcvdPkFromHL:sum(packetBytes) 85608
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar BusLAN.host[4].lo0.lo passedUpPk:count 132
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[4].lo0.lo passedUpPk:sum(packetBytes) 85608
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[4].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[4].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[4].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[4].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[4].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].queue.dataQueue queueLength:max 2
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[4].eth[0].queue.dataQueue queueLength:timeavg 0.00062468634361711
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[4].eth[0].queue.dataQueue queueingTime:histogram
+field count 1043
+field mean 8.9633604026846e-006
+field stddev 5.7376824355474e-005
+field min 0
+field max 0.000733709087
+field sum 0.0093487849
+field sqrsum 3.5141647003758e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.000195025629	0
+bin	-0.0001690222118	0
+bin	-0.0001430187946	0
+bin	-0.0001170153774	0
+bin	-9.10119602e-005	0
+bin	-6.5008543e-005	0
+bin	-3.90051258e-005	0
+bin	-1.30017086e-005	1002
+bin	1.30017086e-005	4
+bin	3.90051258e-005	5
+bin	6.5008543e-005	4
+bin	9.10119602e-005	2
+bin	0.0001170153774	2
+bin	0.0001430187946	1
+bin	0.0001690222118	2
+bin	0.000195025629	2
+bin	0.0002210290462	4
+bin	0.0002470324634	4
+bin	0.0002730358806	2
+bin	0.0002990392978	1
+bin	0.000325042715	1
+bin	0.0003510461322	0
+bin	0.0003770495494	1
+bin	0.0004030529666	0
+bin	0.0004290563838	1
+bin	0.000455059801	0
+bin	0.0004810632182	0
+bin	0.0005070666354	1
+bin	0.0005330700526	1
+bin	0.0005590734698	0
+bin	0.000585076887	3
+scalar BusLAN.host[4].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[4].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].queue.dataQueue rcvdPk:count 1043
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[4].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 600253
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].mac "simulated time" 20
+scalar BusLAN.host[4].eth[0].mac full-duplex 1
+scalar BusLAN.host[4].eth[0].mac "frames/sec sent" 68.7
+scalar BusLAN.host[4].eth[0].mac "frames/sec rcvd" 70.5
+scalar BusLAN.host[4].eth[0].mac "bits/sec sent" 315436.4
+scalar BusLAN.host[4].eth[0].mac "bits/sec rcvd" 316358
+scalar BusLAN.host[4].eth[0].mac "rx channel idle (%)" 74.788156
+scalar BusLAN.host[4].eth[0].mac "rx channel utilization (%)" 25.211844
+scalar BusLAN.host[4].eth[0].mac rxPkFromHL:count 1043
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar BusLAN.host[4].eth[0].mac rxPkFromHL:sum(packetBytes) 600253
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar BusLAN.host[4].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar BusLAN.host[4].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar BusLAN.host[4].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar BusLAN.host[4].eth[0].mac txPk:count 1043
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar BusLAN.host[4].eth[0].mac txPk:sum(packetBytes) 600253
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].mac droppedPkNotForUs:count 8576
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar BusLAN.host[4].eth[0].mac droppedPkNotForUs:sum(packetBytes) 4112824
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[4].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar BusLAN.host[4].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].mac rxPkOk:count 1043
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar BusLAN.host[4].eth[0].mac rxPkOk:sum(packetBytes) 600253
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].mac passedUpPk:count 1043
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[4].eth[0].mac passedUpPk:sum(packetBytes) 600253
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar BusLAN.host[4].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar BusLAN.host[4].eth[0].encap decapPk:count 1043
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar BusLAN.host[4].eth[0].encap decapPk:sum(packetBytes) 581479
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar BusLAN.host[4].eth[0].encap encapPk:count 1043
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar BusLAN.host[4].eth[0].encap encapPk:sum(packetBytes) 581479
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar BusLAN.host[4].pingApp[0] "Pings sent" 380
+scalar BusLAN.host[4].pingApp[0] "ping loss rate (%)" 0
+scalar BusLAN.host[4].pingApp[0] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[4].pingApp[0] pingRxSeq:count 290
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[4].pingApp[0] pingTxSeq:count 290
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[4].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[4].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[4].pingApp[0] rtt:mean 0.00086788069593307
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[4].pingApp[1] "Pings sent" 377
+scalar BusLAN.host[4].pingApp[1] "ping loss rate (%)" 0
+scalar BusLAN.host[4].pingApp[1] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[4].pingApp[1] pingRxSeq:count 288
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[4].pingApp[1] pingTxSeq:count 288
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[4].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[4].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[4].pingApp[1] rtt:mean 0.0013692932407171
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[5].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar BusLAN.host[5].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar BusLAN.host[5].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar BusLAN.host[5].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar BusLAN.host[5].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar BusLAN.host[5].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[5].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[5].lo0.lo rcvdPkFromHL:count 120
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar BusLAN.host[5].lo0.lo rcvdPkFromHL:sum(packetBytes) 64556
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar BusLAN.host[5].lo0.lo passedUpPk:count 120
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[5].lo0.lo passedUpPk:sum(packetBytes) 64556
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[5].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[5].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[5].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[5].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[5].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[5].eth[0].queue.dataQueue queueLength:timeavg 0.00047009319187508
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[5].eth[0].queue.dataQueue queueingTime:histogram
+field count 1002
+field mean 7.0174376736527e-006
+field stddev 4.7667200437032e-005
+field min 0
+field max 0.000517477345
+field sum 0.007031472549
+field sqrsum 2.3237770798683e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.0002186609535	0
+bin	-0.0001895061597	0
+bin	-0.0001603513659	0
+bin	-0.0001311965721	0
+bin	-0.0001020417783	0
+bin	-7.28869845e-005	0
+bin	-4.37321907e-005	0
+bin	-1.45773969e-005	974
+bin	1.45773969e-005	0
+bin	4.37321907e-005	3
+bin	7.28869845e-005	3
+bin	0.0001020417783	1
+bin	0.0001311965721	2
+bin	0.0001603513659	2
+bin	0.0001895061597	1
+bin	0.0002186609535	1
+bin	0.0002478157473	4
+bin	0.0002769705411	2
+bin	0.0003061253349	1
+bin	0.0003352801287	1
+bin	0.0003644349225	2
+bin	0.0003935897163	0
+bin	0.0004227445101	3
+bin	0.0004518993039	0
+bin	0.0004810540977	0
+bin	0.0005102088915	2
+bin	0.0005393636853	0
+bin	0.0005685184791	0
+bin	0.0005976732729	0
+bin	0.0006268280667	0
+bin	0.0006559828605	0
+scalar BusLAN.host[5].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[5].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].queue.dataQueue rcvdPk:count 1002
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[5].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 513258
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].mac "simulated time" 20
+scalar BusLAN.host[5].eth[0].mac full-duplex 1
+scalar BusLAN.host[5].eth[0].mac "frames/sec sent" 67.35
+scalar BusLAN.host[5].eth[0].mac "frames/sec rcvd" 69.15
+scalar BusLAN.host[5].eth[0].mac "bits/sec sent" 274396.8
+scalar BusLAN.host[5].eth[0].mac "bits/sec rcvd" 275318.4
+scalar BusLAN.host[5].eth[0].mac "rx channel idle (%)" 74.376896
+scalar BusLAN.host[5].eth[0].mac "rx channel utilization (%)" 25.623104
+scalar BusLAN.host[5].eth[0].mac rxPkFromHL:count 1002
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar BusLAN.host[5].eth[0].mac rxPkFromHL:sum(packetBytes) 513258
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar BusLAN.host[5].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar BusLAN.host[5].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar BusLAN.host[5].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar BusLAN.host[5].eth[0].mac txPk:count 1002
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar BusLAN.host[5].eth[0].mac txPk:sum(packetBytes) 513258
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].mac droppedPkNotForUs:count 8658
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar BusLAN.host[5].eth[0].mac droppedPkNotForUs:sum(packetBytes) 4286814
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[5].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar BusLAN.host[5].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].mac rxPkOk:count 1002
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar BusLAN.host[5].eth[0].mac rxPkOk:sum(packetBytes) 513258
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].mac passedUpPk:count 1002
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[5].eth[0].mac passedUpPk:sum(packetBytes) 513258
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar BusLAN.host[5].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar BusLAN.host[5].eth[0].encap decapPk:count 1002
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar BusLAN.host[5].eth[0].encap decapPk:sum(packetBytes) 495222
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar BusLAN.host[5].eth[0].encap encapPk:count 1002
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar BusLAN.host[5].eth[0].encap encapPk:sum(packetBytes) 495222
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar BusLAN.host[5].pingApp[0] "Pings sent" 374
+scalar BusLAN.host[5].pingApp[0] "ping loss rate (%)" 0
+scalar BusLAN.host[5].pingApp[0] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[5].pingApp[0] pingRxSeq:count 284
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[5].pingApp[0] pingTxSeq:count 284
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[5].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[5].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[5].pingApp[0] rtt:mean 0.001148315988236
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[5].pingApp[1] "Pings sent" 384
+scalar BusLAN.host[5].pingApp[1] "ping loss rate (%)" 0
+scalar BusLAN.host[5].pingApp[1] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[5].pingApp[1] pingRxSeq:count 284
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[5].pingApp[1] pingTxSeq:count 284
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[5].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[5].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[5].pingApp[1] rtt:mean 0.00061145661355814
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[6].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar BusLAN.host[6].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar BusLAN.host[6].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar BusLAN.host[6].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar BusLAN.host[6].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar BusLAN.host[6].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[6].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[6].lo0.lo rcvdPkFromHL:count 116
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar BusLAN.host[6].lo0.lo rcvdPkFromHL:sum(packetBytes) 46052
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar BusLAN.host[6].lo0.lo passedUpPk:count 116
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[6].lo0.lo passedUpPk:sum(packetBytes) 46052
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[6].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[6].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[6].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[6].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[6].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[6].eth[0].queue.dataQueue queueLength:timeavg 0.00044726645456497
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[6].eth[0].queue.dataQueue queueingTime:histogram
+field count 1103
+field mean 6.0823756337262e-006
+field stddev 4.5198241376846e-005
+field min 0
+field max 0.000591133409
+field sum 0.006708860324
+field sqrsum 2.2920606965275e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.0002556260895	0
+bin	-0.0002215426109	0
+bin	-0.0001874591323	0
+bin	-0.0001533756537	0
+bin	-0.0001192921751	0
+bin	-8.52086965e-005	0
+bin	-5.11252179e-005	0
+bin	-1.70417393e-005	1076
+bin	1.70417393e-005	0
+bin	5.11252179e-005	1
+bin	8.52086965e-005	4
+bin	0.0001192921751	4
+bin	0.0001533756537	6
+bin	0.0001874591323	3
+bin	0.0002215426109	0
+bin	0.0002556260895	1
+bin	0.0002897095681	0
+bin	0.0003237930467	1
+bin	0.0003578765253	1
+bin	0.0003919600039	1
+bin	0.0004260434825	0
+bin	0.0004601269611	1
+bin	0.0004942104397	2
+bin	0.0005282939183	1
+bin	0.0005623773969	1
+bin	0.0005964608755	0
+bin	0.0006305443541	0
+bin	0.0006646278327	0
+bin	0.0006987113113	0
+bin	0.0007327947899	0
+bin	0.0007668782685	0
+scalar BusLAN.host[6].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[6].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].queue.dataQueue rcvdPk:count 1103
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[6].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 517481
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].mac "simulated time" 20
+scalar BusLAN.host[6].eth[0].mac full-duplex 1
+scalar BusLAN.host[6].eth[0].mac "frames/sec sent" 71.1
+scalar BusLAN.host[6].eth[0].mac "frames/sec rcvd" 72.9
+scalar BusLAN.host[6].eth[0].mac "bits/sec sent" 263964
+scalar BusLAN.host[6].eth[0].mac "bits/sec rcvd" 264885.6
+scalar BusLAN.host[6].eth[0].mac "rx channel idle (%)" 74.274968
+scalar BusLAN.host[6].eth[0].mac "rx channel utilization (%)" 25.725032
+scalar BusLAN.host[6].eth[0].mac rxPkFromHL:count 1103
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar BusLAN.host[6].eth[0].mac rxPkFromHL:sum(packetBytes) 517481
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar BusLAN.host[6].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar BusLAN.host[6].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar BusLAN.host[6].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar BusLAN.host[6].eth[0].mac txPk:count 1103
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar BusLAN.host[6].eth[0].mac txPk:sum(packetBytes) 517481
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].mac droppedPkNotForUs:count 8456
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar BusLAN.host[6].eth[0].mac droppedPkNotForUs:sum(packetBytes) 4278368
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[6].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar BusLAN.host[6].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].mac rxPkOk:count 1103
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar BusLAN.host[6].eth[0].mac rxPkOk:sum(packetBytes) 517481
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].mac passedUpPk:count 1103
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[6].eth[0].mac passedUpPk:sum(packetBytes) 517481
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar BusLAN.host[6].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar BusLAN.host[6].eth[0].encap decapPk:count 1103
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar BusLAN.host[6].eth[0].encap decapPk:sum(packetBytes) 497627
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar BusLAN.host[6].eth[0].encap encapPk:count 1103
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar BusLAN.host[6].eth[0].encap encapPk:sum(packetBytes) 497627
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar BusLAN.host[6].pingApp[0] "Pings sent" 391
+scalar BusLAN.host[6].pingApp[0] "ping loss rate (%)" 0
+scalar BusLAN.host[6].pingApp[0] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[6].pingApp[0] pingRxSeq:count 297
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[6].pingApp[0] pingTxSeq:count 297
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[6].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[6].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[6].pingApp[0] rtt:mean 0.00041023843527612
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[6].pingApp[1] "Pings sent" 387
+scalar BusLAN.host[6].pingApp[1] "ping loss rate (%)" 0
+scalar BusLAN.host[6].pingApp[1] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[6].pingApp[1] pingRxSeq:count 298
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[6].pingApp[1] pingTxSeq:count 298
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[6].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[6].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[6].pingApp[1] rtt:mean 0.00097374533520074
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[7].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar BusLAN.host[7].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar BusLAN.host[7].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar BusLAN.host[7].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar BusLAN.host[7].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar BusLAN.host[7].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[7].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[7].lo0.lo rcvdPkFromHL:count 98
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar BusLAN.host[7].lo0.lo rcvdPkFromHL:sum(packetBytes) 38944
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar BusLAN.host[7].lo0.lo passedUpPk:count 98
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[7].lo0.lo passedUpPk:sum(packetBytes) 38944
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[7].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[7].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[7].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[7].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[7].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[7].eth[0].queue.dataQueue queueLength:timeavg 0.00035932023790592
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[7].eth[0].queue.dataQueue queueingTime:histogram
+field count 1023
+field mean 5.2683495962854e-006
+field stddev 4.2837240587419e-005
+field min 0
+field max 0.000605278737
+field sum 0.005389521637
+field sqrsum 1.90379370727e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-2.9765892e-005	0
+bin	-2.57971064e-005	0
+bin	-2.18283208e-005	0
+bin	-1.78595352e-005	0
+bin	-1.38907496e-005	0
+bin	-9.921964e-006	0
+bin	-5.9531784e-006	0
+bin	-1.9843928e-006	1000
+bin	1.9843928e-006	0
+bin	5.9531784e-006	0
+bin	9.921964e-006	1
+bin	1.38907496e-005	0
+bin	1.78595352e-005	0
+bin	2.18283208e-005	0
+bin	2.57971064e-005	0
+bin	2.9765892e-005	0
+bin	3.37346776e-005	0
+bin	3.77034632e-005	0
+bin	4.16722488e-005	0
+bin	4.56410344e-005	0
+bin	4.960982e-005	1
+bin	5.35786056e-005	0
+bin	5.75473912e-005	1
+bin	6.15161768e-005	0
+bin	6.54849624e-005	0
+bin	6.9453748e-005	0
+bin	7.34225336e-005	0
+bin	7.73913192e-005	1
+bin	8.13601048e-005	0
+bin	8.53288904e-005	0
+bin	8.9297676e-005	19
+scalar BusLAN.host[7].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[7].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].queue.dataQueue rcvdPk:count 1023
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[7].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 475261
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].mac "simulated time" 20
+scalar BusLAN.host[7].eth[0].mac full-duplex 1
+scalar BusLAN.host[7].eth[0].mac "frames/sec sent" 68.1
+scalar BusLAN.host[7].eth[0].mac "frames/sec rcvd" 69.9
+scalar BusLAN.host[7].eth[0].mac "bits/sec sent" 250419.6
+scalar BusLAN.host[7].eth[0].mac "bits/sec rcvd" 251341.2
+scalar BusLAN.host[7].eth[0].mac "rx channel idle (%)" 74.137604
+scalar BusLAN.host[7].eth[0].mac "rx channel utilization (%)" 25.862396
+scalar BusLAN.host[7].eth[0].mac rxPkFromHL:count 1023
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar BusLAN.host[7].eth[0].mac rxPkFromHL:sum(packetBytes) 475261
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar BusLAN.host[7].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar BusLAN.host[7].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar BusLAN.host[7].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar BusLAN.host[7].eth[0].mac txPk:count 1023
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar BusLAN.host[7].eth[0].mac txPk:sum(packetBytes) 475261
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].mac droppedPkNotForUs:count 8616
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar BusLAN.host[7].eth[0].mac droppedPkNotForUs:sum(packetBytes) 4362808
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[7].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar BusLAN.host[7].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].mac rxPkOk:count 1023
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar BusLAN.host[7].eth[0].mac rxPkOk:sum(packetBytes) 475261
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].mac passedUpPk:count 1023
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[7].eth[0].mac passedUpPk:sum(packetBytes) 475261
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar BusLAN.host[7].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar BusLAN.host[7].eth[0].encap decapPk:count 1023
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar BusLAN.host[7].eth[0].encap decapPk:sum(packetBytes) 456847
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar BusLAN.host[7].eth[0].encap encapPk:count 1023
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar BusLAN.host[7].eth[0].encap encapPk:sum(packetBytes) 456847
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar BusLAN.host[7].pingApp[0] "Pings sent" 379
+scalar BusLAN.host[7].pingApp[0] "ping loss rate (%)" 0
+scalar BusLAN.host[7].pingApp[0] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[7].pingApp[0] pingRxSeq:count 283
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[7].pingApp[0] pingTxSeq:count 283
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[7].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[7].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[7].pingApp[0] rtt:mean 0.00049189608197692
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[7].pingApp[1] "Pings sent" 380
+scalar BusLAN.host[7].pingApp[1] "ping loss rate (%)" 0
+scalar BusLAN.host[7].pingApp[1] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[7].pingApp[1] pingRxSeq:count 285
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[7].pingApp[1] pingTxSeq:count 285
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[7].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[7].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[7].pingApp[1] rtt:mean 0.00086319429105791
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[8].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar BusLAN.host[8].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar BusLAN.host[8].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar BusLAN.host[8].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar BusLAN.host[8].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar BusLAN.host[8].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[8].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[8].lo0.lo rcvdPkFromHL:count 90
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar BusLAN.host[8].lo0.lo rcvdPkFromHL:sum(packetBytes) 67830
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar BusLAN.host[8].lo0.lo passedUpPk:count 90
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[8].lo0.lo passedUpPk:sum(packetBytes) 67830
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[8].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[8].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[8].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[8].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[8].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[8].eth[0].queue.dataQueue queueLength:timeavg 0.00080044545116417
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[8].eth[0].queue.dataQueue queueingTime:histogram
+field count 1121
+field mean 1.0710198293488e-005
+field stddev 6.5519526972397e-005
+field min 0
+field max 0.000622002642
+field sum 0.012006132287
+field sqrsum 4.9365334819806e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.0003034498695	0
+bin	-0.0002629898869	0
+bin	-0.0002225299043	0
+bin	-0.0001820699217	0
+bin	-0.0001416099391	0
+bin	-0.0001011499565	0
+bin	-6.06899739e-005	0
+bin	-2.02299913e-005	1081
+bin	2.02299913e-005	5
+bin	6.06899739e-005	2
+bin	0.0001011499565	3
+bin	0.0001416099391	2
+bin	0.0001820699217	6
+bin	0.0002225299043	3
+bin	0.0002629898869	1
+bin	0.0003034498695	1
+bin	0.0003439098521	2
+bin	0.0003843698347	1
+bin	0.0004248298173	5
+bin	0.0004652897999	1
+bin	0.0005057497825	3
+bin	0.0005462097651	3
+bin	0.0005866697477	2
+bin	0.0006271297303	0
+bin	0.0006675897129	0
+bin	0.0007080496955	0
+bin	0.0007485096781	0
+bin	0.0007889696607	0
+bin	0.0008294296433	0
+bin	0.0008698896259	0
+bin	0.0009103496085	0
+scalar BusLAN.host[8].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[8].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].queue.dataQueue rcvdPk:count 1121
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[8].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 685704
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].mac "simulated time" 20
+scalar BusLAN.host[8].eth[0].mac full-duplex 1
+scalar BusLAN.host[8].eth[0].mac "frames/sec sent" 72.95
+scalar BusLAN.host[8].eth[0].mac "frames/sec rcvd" 74.75
+scalar BusLAN.host[8].eth[0].mac "bits/sec sent" 355962.8
+scalar BusLAN.host[8].eth[0].mac "bits/sec rcvd" 356884.4
+scalar BusLAN.host[8].eth[0].mac "rx channel idle (%)" 75.19614
+scalar BusLAN.host[8].eth[0].mac "rx channel utilization (%)" 24.80386
+scalar BusLAN.host[8].eth[0].mac rxPkFromHL:count 1121
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar BusLAN.host[8].eth[0].mac rxPkFromHL:sum(packetBytes) 685704
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar BusLAN.host[8].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar BusLAN.host[8].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar BusLAN.host[8].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar BusLAN.host[8].eth[0].mac txPk:count 1121
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar BusLAN.host[8].eth[0].mac txPk:sum(packetBytes) 685704
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].mac droppedPkNotForUs:count 8420
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar BusLAN.host[8].eth[0].mac droppedPkNotForUs:sum(packetBytes) 3941922
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[8].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar BusLAN.host[8].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].mac rxPkOk:count 1121
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar BusLAN.host[8].eth[0].mac rxPkOk:sum(packetBytes) 685704
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].mac passedUpPk:count 1121
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[8].eth[0].mac passedUpPk:sum(packetBytes) 685704
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar BusLAN.host[8].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar BusLAN.host[8].eth[0].encap decapPk:count 1121
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar BusLAN.host[8].eth[0].encap decapPk:sum(packetBytes) 665526
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar BusLAN.host[8].eth[0].encap encapPk:count 1121
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar BusLAN.host[8].eth[0].encap encapPk:sum(packetBytes) 665526
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar BusLAN.host[8].pingApp[0] "Pings sent" 371
+scalar BusLAN.host[8].pingApp[0] "ping loss rate (%)" 0
+scalar BusLAN.host[8].pingApp[0] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[8].pingApp[0] pingRxSeq:count 286
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[8].pingApp[0] pingTxSeq:count 286
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[8].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[8].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[8].pingApp[0] rtt:mean 0.0012628820666566
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[8].pingApp[1] "Pings sent" 398
+scalar BusLAN.host[8].pingApp[1] "ping loss rate (%)" 0
+scalar BusLAN.host[8].pingApp[1] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[8].pingApp[1] pingRxSeq:count 309
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[8].pingApp[1] pingTxSeq:count 309
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[8].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[8].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[8].pingApp[1] rtt:mean 0.0012589823031439
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[9].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar BusLAN.host[9].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar BusLAN.host[9].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar BusLAN.host[9].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar BusLAN.host[9].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar BusLAN.host[9].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[9].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[9].lo0.lo rcvdPkFromHL:count 88
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar BusLAN.host[9].lo0.lo rcvdPkFromHL:sum(packetBytes) 19248
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar BusLAN.host[9].lo0.lo passedUpPk:count 88
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[9].lo0.lo passedUpPk:sum(packetBytes) 19248
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[9].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[9].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar BusLAN.host[9].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[9].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[9].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].queue.dataQueue queueLength:max 2
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar BusLAN.host[9].eth[0].queue.dataQueue queueLength:timeavg 0.00041190654383112
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic BusLAN.host[9].eth[0].queue.dataQueue queueingTime:histogram
+field count 1073
+field mean 5.7481299002796e-006
+field stddev 4.8458619701518e-005
+field min 0
+field max 0.000664449607
+field sum 0.006167743383
+field sqrsum 2.5527639368165e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-7.7738065e-005	0
+bin	-6.7372989666667e-005	0
+bin	-5.7007914333333e-005	0
+bin	-4.6642839e-005	0
+bin	-3.6277763666667e-005	0
+bin	-2.5912688333333e-005	0
+bin	-1.5547613e-005	0
+bin	-5.1825376666667e-006	1049
+bin	5.1825376666667e-006	1
+bin	1.5547613e-005	2
+bin	2.5912688333333e-005	0
+bin	3.6277763666667e-005	0
+bin	4.6642839e-005	1
+bin	5.7007914333333e-005	0
+bin	6.7372989666667e-005	0
+bin	7.7738065e-005	1
+bin	8.8103140333333e-005	2
+bin	9.8468215666667e-005	0
+bin	0.000108833291	0
+bin	0.00011919836633333	2
+bin	0.00012956344166667	0
+bin	0.000139928517	0
+bin	0.00015029359233333	1
+bin	0.00016065866766667	1
+bin	0.000171023743	0
+bin	0.00018138881833333	1
+bin	0.00019175389366667	0
+bin	0.000202118969	0
+bin	0.00021248404433333	2
+bin	0.00022284911966667	0
+bin	0.000233214195	10
+scalar BusLAN.host[9].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar BusLAN.host[9].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].queue.dataQueue rcvdPk:count 1073
+attr interpolationmode none
+attr title "received packets, count"
+scalar BusLAN.host[9].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 409486
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].mac "simulated time" 20
+scalar BusLAN.host[9].eth[0].mac full-duplex 1
+scalar BusLAN.host[9].eth[0].mac "frames/sec sent" 71.05
+scalar BusLAN.host[9].eth[0].mac "frames/sec rcvd" 72.85
+scalar BusLAN.host[9].eth[0].mac "bits/sec sent" 216578.8
+scalar BusLAN.host[9].eth[0].mac "bits/sec rcvd" 217500.4
+scalar BusLAN.host[9].eth[0].mac "rx channel idle (%)" 73.801084
+scalar BusLAN.host[9].eth[0].mac "rx channel utilization (%)" 26.198916
+scalar BusLAN.host[9].eth[0].mac rxPkFromHL:count 1073
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar BusLAN.host[9].eth[0].mac rxPkFromHL:sum(packetBytes) 409486
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar BusLAN.host[9].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar BusLAN.host[9].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar BusLAN.host[9].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar BusLAN.host[9].eth[0].mac txPk:count 1073
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar BusLAN.host[9].eth[0].mac txPk:sum(packetBytes) 409486
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].mac droppedPkNotForUs:count 8516
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar BusLAN.host[9].eth[0].mac droppedPkNotForUs:sum(packetBytes) 4494358
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar BusLAN.host[9].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar BusLAN.host[9].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].mac rxPkOk:count 1073
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar BusLAN.host[9].eth[0].mac rxPkOk:sum(packetBytes) 409486
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].mac passedUpPk:count 1073
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar BusLAN.host[9].eth[0].mac passedUpPk:sum(packetBytes) 409486
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar BusLAN.host[9].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar BusLAN.host[9].eth[0].encap decapPk:count 1073
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar BusLAN.host[9].eth[0].encap decapPk:sum(packetBytes) 390172
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar BusLAN.host[9].eth[0].encap encapPk:count 1073
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar BusLAN.host[9].eth[0].encap encapPk:sum(packetBytes) 390172
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar BusLAN.host[9].pingApp[0] "Pings sent" 390
+scalar BusLAN.host[9].pingApp[0] "ping loss rate (%)" 0
+scalar BusLAN.host[9].pingApp[0] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[9].pingApp[0] pingRxSeq:count 305
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[9].pingApp[0] pingTxSeq:count 305
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[9].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[9].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[9].pingApp[0] rtt:mean 0.00048801490778521
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.host[9].pingApp[1] "Pings sent" 380
+scalar BusLAN.host[9].pingApp[1] "ping loss rate (%)" 0
+scalar BusLAN.host[9].pingApp[1] "ping out-of-order rate (%)" 0
+scalar BusLAN.host[9].pingApp[1] pingRxSeq:count 286
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar BusLAN.host[9].pingApp[1] pingTxSeq:count 286
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar BusLAN.host[9].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar BusLAN.host[9].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar BusLAN.host[9].pingApp[1] rtt:mean 0.00033140234214829
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar BusLAN.bus "simulated time" 20
+scalar BusLAN.bus "messages handled" 0
+scalar BusLAN.bus messages/sec 0
+

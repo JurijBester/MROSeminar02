@@ -1,0 +1,5047 @@
+version 2
+run StarLAN10-packetsize-0-20180110-19:21:14-14824
+attr configname StarLAN10-packetsize
+attr datetime 20180110-19:21:14
+attr experiment StarLAN10-packetsize
+attr inifile StarLAN.ini
+attr iterationvars $pa=2
+attr iterationvarsf pa=2-
+attr measurement $pa=2
+attr network StarLAN
+attr processid 14824
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+itervar pa 2
+param *.numHosts 10
+param **.datarate 10Mbps
+param **.host[*].pingApp[*].sendInterval "truncnormal(50ms, 25ms)"
+param **.host[*].pingApp[*].packetSize "truncnormal(512B, 256B)"
+param **.queueType "\"DropTailQueue\""
+param **.frameCapacity 10
+param **.mtu 1024B
+param **.host[*].numPingApps 2
+param **.host[*].pingApp[*].typename "\"PingApp\""
+param **.host[*].pingApp[*].count 1
+param **.host[*].pingApp[*].startTime "truncnormal(200ms, 100ms)"
+param **.host[*].pingApp[*].destAddr "\"*\""
+
+scalar StarLAN.host[0].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar StarLAN.host[0].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar StarLAN.host[0].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar StarLAN.host[0].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar StarLAN.host[0].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar StarLAN.host[0].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[0].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[0].lo0.lo rcvdPkFromHL:count 124
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar StarLAN.host[0].lo0.lo rcvdPkFromHL:sum(packetBytes) 61784
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar StarLAN.host[0].lo0.lo passedUpPk:count 124
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[0].lo0.lo passedUpPk:sum(packetBytes) 61784
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[0].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[0].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.host[0].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[0].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[0].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[0].eth[0].queue.dataQueue queueLength:timeavg 0.00030989575637837
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[0].eth[0].queue.dataQueue queueingTime:histogram
+field count 1059
+field mean 4.3888898215297e-006
+field stddev 3.5573217782618e-005
+field min 0
+field max 0.000586952464
+field sum 0.004647834321
+field sqrsum 1.359248977911e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.000149746558	0
+bin	-0.00012978035026667	0
+bin	-0.00010981414253333	0
+bin	-8.98479348e-005	0
+bin	-6.9881727066667e-005	0
+bin	-4.9915519333333e-005	0
+bin	-2.99493116e-005	0
+bin	-9.9831038666667e-006	1037
+bin	9.9831038666667e-006	0
+bin	2.99493116e-005	2
+bin	4.9915519333333e-005	1
+bin	6.9881727066667e-005	1
+bin	8.98479348e-005	2
+bin	0.00010981414253333	1
+bin	0.00012978035026667	2
+bin	0.000149746558	1
+bin	0.00016971276573333	0
+bin	0.00018967897346667	2
+bin	0.0002096451812	2
+bin	0.00022961138893333	1
+bin	0.00024957759666667	0
+bin	0.0002695438044	0
+bin	0.00028951001213333	3
+bin	0.00030947621986667	2
+bin	0.0003294424276	0
+bin	0.00034940863533333	0
+bin	0.00036937484306667	0
+bin	0.0003893410508	0
+bin	0.00040930725853333	0
+bin	0.00042927346626667	1
+bin	0.000449239674	1
+scalar StarLAN.host[0].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[0].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].queue.dataQueue rcvdPk:count 1059
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[0].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 537844
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].mac "simulated time" 20
+scalar StarLAN.host[0].eth[0].mac full-duplex 1
+scalar StarLAN.host[0].eth[0].mac "frames/sec sent" 71
+scalar StarLAN.host[0].eth[0].mac "frames/sec rcvd" 72.8
+scalar StarLAN.host[0].eth[0].mac "bits/sec sent" 287594
+scalar StarLAN.host[0].eth[0].mac "bits/sec rcvd" 288515.6
+scalar StarLAN.host[0].eth[0].mac "rx channel idle (%)" 97.068252
+scalar StarLAN.host[0].eth[0].mac "rx channel utilization (%)" 2.931748
+scalar StarLAN.host[0].eth[0].mac rxPkFromHL:count 1059
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.host[0].eth[0].mac rxPkFromHL:sum(packetBytes) 537844
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.host[0].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.host[0].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.host[0].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.host[0].eth[0].mac txPk:count 1059
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.host[0].eth[0].mac txPk:sum(packetBytes) 537844
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.host[0].eth[0].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[0].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.host[0].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].mac rxPkOk:count 1059
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.host[0].eth[0].mac rxPkOk:sum(packetBytes) 537844
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].mac passedUpPk:count 1059
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[0].eth[0].mac passedUpPk:sum(packetBytes) 537844
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar StarLAN.host[0].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar StarLAN.host[0].eth[0].encap decapPk:count 1059
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar StarLAN.host[0].eth[0].encap decapPk:sum(packetBytes) 518782
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar StarLAN.host[0].eth[0].encap encapPk:count 1059
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar StarLAN.host[0].eth[0].encap encapPk:sum(packetBytes) 518782
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar StarLAN.host[0].pingApp[0] "Pings sent" 388
+scalar StarLAN.host[0].pingApp[0] "ping loss rate (%)" 0
+scalar StarLAN.host[0].pingApp[0] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[0].pingApp[0] pingRxSeq:count 300
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[0].pingApp[0] pingTxSeq:count 300
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[0].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[0].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[0].pingApp[0] rtt:mean 0.00096524553628839
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[0].pingApp[1] "Pings sent" 384
+scalar StarLAN.host[0].pingApp[1] "ping loss rate (%)" 0
+scalar StarLAN.host[0].pingApp[1] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[0].pingApp[1] pingRxSeq:count 288
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[0].pingApp[1] pingTxSeq:count 288
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[0].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[0].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[0].pingApp[1] rtt:mean 0.0025319883469112
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[1].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar StarLAN.host[1].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar StarLAN.host[1].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar StarLAN.host[1].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar StarLAN.host[1].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar StarLAN.host[1].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[1].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[1].lo0.lo rcvdPkFromHL:count 120
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar StarLAN.host[1].lo0.lo rcvdPkFromHL:sum(packetBytes) 47976
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar StarLAN.host[1].lo0.lo passedUpPk:count 120
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[1].lo0.lo passedUpPk:sum(packetBytes) 47976
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[1].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[1].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.host[1].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[1].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[1].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].queue.dataQueue queueLength:max 2
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[1].eth[0].queue.dataQueue queueLength:timeavg 0.00052436150805918
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[1].eth[0].queue.dataQueue queueingTime:histogram
+field count 1070
+field mean 7.3502429401869e-006
+field stddev 5.103172331203e-005
+field min 0
+field max 0.0006936
+field sum 0.007864759946
+field sqrsum 2.8417370185744e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.000205588555	0
+bin	-0.00017817674766667	0
+bin	-0.00015076494033333	0
+bin	-0.000123353133	0
+bin	-9.5941325666667e-005	0
+bin	-6.8529518333333e-005	0
+bin	-4.1117711e-005	0
+bin	-1.3705903666667e-005	1039
+bin	1.3705903666667e-005	2
+bin	4.1117711e-005	3
+bin	6.8529518333333e-005	1
+bin	9.5941325666667e-005	1
+bin	0.000123353133	1
+bin	0.00015076494033333	2
+bin	0.00017817674766667	3
+bin	0.000205588555	5
+bin	0.00023300036233333	2
+bin	0.00026041216966667	0
+bin	0.000287823977	1
+bin	0.00031523578433333	2
+bin	0.00034264759166667	0
+bin	0.000370059399	1
+bin	0.00039747120633333	2
+bin	0.00042488301366667	1
+bin	0.000452294821	1
+bin	0.00047970662833333	1
+bin	0.00050711843566667	0
+bin	0.000534530243	0
+bin	0.00056194205033333	1
+bin	0.00058935385766667	0
+bin	0.000616765665	1
+scalar StarLAN.host[1].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[1].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].queue.dataQueue rcvdPk:count 1070
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[1].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 500034
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].mac "simulated time" 20
+scalar StarLAN.host[1].eth[0].mac full-duplex 1
+scalar StarLAN.host[1].eth[0].mac "frames/sec sent" 70.9
+scalar StarLAN.host[1].eth[0].mac "frames/sec rcvd" 72.7
+scalar StarLAN.host[1].eth[0].mac "bits/sec sent" 263535.2
+scalar StarLAN.host[1].eth[0].mac "bits/sec rcvd" 264456.8
+scalar StarLAN.host[1].eth[0].mac "rx channel idle (%)" 97.308904
+scalar StarLAN.host[1].eth[0].mac "rx channel utilization (%)" 2.691096
+scalar StarLAN.host[1].eth[0].mac rxPkFromHL:count 1070
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.host[1].eth[0].mac rxPkFromHL:sum(packetBytes) 500034
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.host[1].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.host[1].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.host[1].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.host[1].eth[0].mac txPk:count 1070
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.host[1].eth[0].mac txPk:sum(packetBytes) 500034
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.host[1].eth[0].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[1].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.host[1].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].mac rxPkOk:count 1070
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.host[1].eth[0].mac rxPkOk:sum(packetBytes) 500034
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].mac passedUpPk:count 1070
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[1].eth[0].mac passedUpPk:sum(packetBytes) 500034
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar StarLAN.host[1].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar StarLAN.host[1].eth[0].encap decapPk:count 1070
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar StarLAN.host[1].eth[0].encap decapPk:sum(packetBytes) 480774
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar StarLAN.host[1].eth[0].encap encapPk:count 1070
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar StarLAN.host[1].eth[0].encap encapPk:sum(packetBytes) 480774
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar StarLAN.host[1].pingApp[0] "Pings sent" 406
+scalar StarLAN.host[1].pingApp[0] "ping loss rate (%)" 0
+scalar StarLAN.host[1].pingApp[0] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[1].pingApp[0] pingRxSeq:count 307
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[1].pingApp[0] pingTxSeq:count 307
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[1].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[1].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[1].pingApp[0] rtt:mean 0.0012323815783418
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[1].pingApp[1] "Pings sent" 380
+scalar StarLAN.host[1].pingApp[1] "ping loss rate (%)" 0
+scalar StarLAN.host[1].pingApp[1] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[1].pingApp[1] pingRxSeq:count 288
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[1].pingApp[1] pingTxSeq:count 288
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[1].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[1].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[1].pingApp[1] rtt:mean 0.0015644464191039
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[2].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar StarLAN.host[2].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar StarLAN.host[2].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar StarLAN.host[2].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar StarLAN.host[2].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar StarLAN.host[2].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[2].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[2].lo0.lo rcvdPkFromHL:count 132
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar StarLAN.host[2].lo0.lo rcvdPkFromHL:sum(packetBytes) 75896
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar StarLAN.host[2].lo0.lo passedUpPk:count 132
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[2].lo0.lo passedUpPk:sum(packetBytes) 75896
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[2].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[2].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.host[2].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[2].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[2].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[2].eth[0].queue.dataQueue queueLength:timeavg 0.00035188845300009
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[2].eth[0].queue.dataQueue queueingTime:histogram
+field count 1091
+field mean 4.8320656535289e-006
+field stddev 4.0450046341092e-005
+field min 0
+field max 0.000475343964
+field sum 0.005271783628
+field sqrsum 1.8089384160078e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-8.96e-005	0
+bin	-7.7653333333333e-005	0
+bin	-6.5706666666667e-005	0
+bin	-5.376e-005	0
+bin	-4.1813333333333e-005	0
+bin	-2.9866666666667e-005	0
+bin	-1.792e-005	0
+bin	-5.9733333333333e-006	1069
+bin	5.9733333333333e-006	1
+bin	1.792e-005	1
+bin	2.9866666666667e-005	2
+bin	4.1813333333333e-005	0
+bin	5.376e-005	0
+bin	6.5706666666667e-005	0
+bin	7.7653333333333e-005	1
+bin	8.96e-005	0
+bin	0.00010154666666667	2
+bin	0.00011349333333333	1
+bin	0.00012544	0
+bin	0.00013738666666667	0
+bin	0.00014933333333333	0
+bin	0.00016128	0
+bin	0.00017322666666667	1
+bin	0.00018517333333333	1
+bin	0.00019712	0
+bin	0.00020906666666667	0
+bin	0.00022101333333333	0
+bin	0.00023296	2
+bin	0.00024490666666667	1
+bin	0.00025685333333333	0
+bin	0.0002688	9
+scalar StarLAN.host[2].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[2].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].queue.dataQueue rcvdPk:count 1091
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[2].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 588459
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].mac "simulated time" 20
+scalar StarLAN.host[2].eth[0].mac full-duplex 1
+scalar StarLAN.host[2].eth[0].mac "frames/sec sent" 72.65
+scalar StarLAN.host[2].eth[0].mac "frames/sec rcvd" 74.45
+scalar StarLAN.host[2].eth[0].mac "bits/sec sent" 312542
+scalar StarLAN.host[2].eth[0].mac "bits/sec rcvd" 313463.6
+scalar StarLAN.host[2].eth[0].mac "rx channel idle (%)" 96.817716
+scalar StarLAN.host[2].eth[0].mac "rx channel utilization (%)" 3.182284
+scalar StarLAN.host[2].eth[0].mac rxPkFromHL:count 1091
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.host[2].eth[0].mac rxPkFromHL:sum(packetBytes) 588459
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.host[2].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.host[2].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.host[2].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.host[2].eth[0].mac txPk:count 1091
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.host[2].eth[0].mac txPk:sum(packetBytes) 588459
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.host[2].eth[0].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[2].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.host[2].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].mac rxPkOk:count 1091
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.host[2].eth[0].mac rxPkOk:sum(packetBytes) 588459
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].mac passedUpPk:count 1091
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[2].eth[0].mac passedUpPk:sum(packetBytes) 588459
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar StarLAN.host[2].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar StarLAN.host[2].eth[0].encap decapPk:count 1091
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar StarLAN.host[2].eth[0].encap decapPk:sum(packetBytes) 568821
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar StarLAN.host[2].eth[0].encap encapPk:count 1091
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar StarLAN.host[2].eth[0].encap encapPk:sum(packetBytes) 568821
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar StarLAN.host[2].pingApp[0] "Pings sent" 386
+scalar StarLAN.host[2].pingApp[0] "ping loss rate (%)" 0
+scalar StarLAN.host[2].pingApp[0] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[2].pingApp[0] pingRxSeq:count 288
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[2].pingApp[0] pingTxSeq:count 288
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[2].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[2].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[2].pingApp[0] rtt:mean 0.001542505937748
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[2].pingApp[1] "Pings sent" 400
+scalar StarLAN.host[2].pingApp[1] "ping loss rate (%)" 0
+scalar StarLAN.host[2].pingApp[1] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[2].pingApp[1] pingRxSeq:count 297
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[2].pingApp[1] pingTxSeq:count 297
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[2].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[2].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[2].pingApp[1] rtt:mean 0.002384643538049
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[3].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar StarLAN.host[3].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar StarLAN.host[3].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar StarLAN.host[3].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar StarLAN.host[3].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar StarLAN.host[3].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[3].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[3].lo0.lo rcvdPkFromHL:count 134
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar StarLAN.host[3].lo0.lo rcvdPkFromHL:sum(packetBytes) 53744
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar StarLAN.host[3].lo0.lo passedUpPk:count 134
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[3].lo0.lo passedUpPk:sum(packetBytes) 53744
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[3].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[3].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.host[3].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[3].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[3].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[3].eth[0].queue.dataQueue queueLength:timeavg 0.00030092741920429
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[3].eth[0].queue.dataQueue queueingTime:histogram
+field count 1115
+field mean 4.0464123946188e-006
+field stddev 3.3143401873406e-005
+field min 0
+field max 0.000415607368
+field sum 0.00451174982
+field sqrsum 1.2419687881378e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-1.060146e-006	0
+bin	-9.187932e-007	0
+bin	-7.774404e-007	0
+bin	-6.360876e-007	0
+bin	-4.947348e-007	0
+bin	-3.53382e-007	0
+bin	-2.120292e-007	0
+bin	-7.06764e-008	1091
+bin	7.06764e-008	0
+bin	2.120292e-007	0
+bin	3.53382e-007	0
+bin	4.947348e-007	0
+bin	6.360876e-007	0
+bin	7.774404e-007	0
+bin	9.187932e-007	0
+bin	1.060146e-006	0
+bin	1.2014988e-006	0
+bin	1.3428516e-006	0
+bin	1.4842044e-006	0
+bin	1.6255572e-006	0
+bin	1.76691e-006	0
+bin	1.9082628e-006	0
+bin	2.0496156e-006	1
+bin	2.1909684e-006	0
+bin	2.3323212e-006	0
+bin	2.473674e-006	0
+bin	2.6150268e-006	0
+bin	2.7563796e-006	0
+bin	2.8977324e-006	0
+bin	3.0390852e-006	0
+bin	3.180438e-006	23
+scalar StarLAN.host[3].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[3].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].queue.dataQueue rcvdPk:count 1115
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[3].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 519787
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].mac "simulated time" 20
+scalar StarLAN.host[3].eth[0].mac full-duplex 1
+scalar StarLAN.host[3].eth[0].mac "frames/sec sent" 71.6
+scalar StarLAN.host[3].eth[0].mac "frames/sec rcvd" 73.4
+scalar StarLAN.host[3].eth[0].mac "bits/sec sent" 265724.4
+scalar StarLAN.host[3].eth[0].mac "bits/sec rcvd" 266646
+scalar StarLAN.host[3].eth[0].mac "rx channel idle (%)" 97.286564
+scalar StarLAN.host[3].eth[0].mac "rx channel utilization (%)" 2.713436
+scalar StarLAN.host[3].eth[0].mac rxPkFromHL:count 1115
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.host[3].eth[0].mac rxPkFromHL:sum(packetBytes) 519787
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.host[3].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.host[3].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.host[3].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.host[3].eth[0].mac txPk:count 1115
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.host[3].eth[0].mac txPk:sum(packetBytes) 519787
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.host[3].eth[0].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[3].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.host[3].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].mac rxPkOk:count 1115
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.host[3].eth[0].mac rxPkOk:sum(packetBytes) 519787
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].mac passedUpPk:count 1115
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[3].eth[0].mac passedUpPk:sum(packetBytes) 519787
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar StarLAN.host[3].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar StarLAN.host[3].eth[0].encap decapPk:count 1115
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar StarLAN.host[3].eth[0].encap decapPk:sum(packetBytes) 499717
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar StarLAN.host[3].eth[0].encap encapPk:count 1115
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar StarLAN.host[3].eth[0].encap encapPk:sum(packetBytes) 499717
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar StarLAN.host[3].pingApp[0] "Pings sent" 385
+scalar StarLAN.host[3].pingApp[0] "ping loss rate (%)" 0
+scalar StarLAN.host[3].pingApp[0] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[3].pingApp[0] pingRxSeq:count 292
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[3].pingApp[0] pingTxSeq:count 292
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[3].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[3].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[3].pingApp[0] rtt:mean 0.0010115916054318
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[3].pingApp[1] "Pings sent" 415
+scalar StarLAN.host[3].pingApp[1] "ping loss rate (%)" 0
+scalar StarLAN.host[3].pingApp[1] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[3].pingApp[1] pingRxSeq:count 322
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[3].pingApp[1] pingTxSeq:count 322
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[3].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[3].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[3].pingApp[1] rtt:mean 0.0016725056476679
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[4].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar StarLAN.host[4].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar StarLAN.host[4].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar StarLAN.host[4].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar StarLAN.host[4].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar StarLAN.host[4].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[4].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[4].lo0.lo rcvdPkFromHL:count 108
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar StarLAN.host[4].lo0.lo rcvdPkFromHL:sum(packetBytes) 70332
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar StarLAN.host[4].lo0.lo passedUpPk:count 108
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[4].lo0.lo passedUpPk:sum(packetBytes) 70332
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[4].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[4].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.host[4].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[4].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[4].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[4].eth[0].queue.dataQueue queueLength:timeavg 0.00058105593701283
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[4].eth[0].queue.dataQueue queueingTime:histogram
+field count 1040
+field mean 8.3612705490385e-006
+field stddev 5.5732099752524e-005
+field min 0
+field max 0.000660734574
+field sum 0.008695721371
+field sqrsum 3.2999108325975e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.000218459173	0
+bin	-0.00018933128326667	0
+bin	-0.00016020339353333	0
+bin	-0.0001310755038	0
+bin	-0.00010194761406667	0
+bin	-7.2819724333333e-005	0
+bin	-4.36918346e-005	0
+bin	-1.4563944866667e-005	1010
+bin	1.4563944866667e-005	1
+bin	4.36918346e-005	1
+bin	7.2819724333333e-005	1
+bin	0.00010194761406667	2
+bin	0.0001310755038	2
+bin	0.00016020339353333	4
+bin	0.00018933128326667	1
+bin	0.000218459173	2
+bin	0.00024758706273333	1
+bin	0.00027671495246667	2
+bin	0.0003058428422	1
+bin	0.00033497073193333	3
+bin	0.00036409862166667	2
+bin	0.0003932265114	0
+bin	0.00042235440113333	4
+bin	0.00045148229086667	0
+bin	0.0004806101806	0
+bin	0.00050973807033333	1
+bin	0.00053886596006667	0
+bin	0.0005679938498	0
+bin	0.00059712173953333	0
+bin	0.00062624962926667	0
+bin	0.000655377519	2
+scalar StarLAN.host[4].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[4].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].queue.dataQueue rcvdPk:count 1040
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[4].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 604378
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].mac "simulated time" 20
+scalar StarLAN.host[4].eth[0].mac full-duplex 1
+scalar StarLAN.host[4].eth[0].mac "frames/sec sent" 67.65
+scalar StarLAN.host[4].eth[0].mac "frames/sec rcvd" 69.45
+scalar StarLAN.host[4].eth[0].mac "bits/sec sent" 312467.6
+scalar StarLAN.host[4].eth[0].mac "bits/sec rcvd" 313389.2
+scalar StarLAN.host[4].eth[0].mac "rx channel idle (%)" 96.82166
+scalar StarLAN.host[4].eth[0].mac "rx channel utilization (%)" 3.17834
+scalar StarLAN.host[4].eth[0].mac rxPkFromHL:count 1040
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.host[4].eth[0].mac rxPkFromHL:sum(packetBytes) 604378
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.host[4].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.host[4].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.host[4].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.host[4].eth[0].mac txPk:count 1040
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.host[4].eth[0].mac txPk:sum(packetBytes) 604378
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.host[4].eth[0].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[4].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.host[4].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].mac rxPkOk:count 1041
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.host[4].eth[0].mac rxPkOk:sum(packetBytes) 604900
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].mac passedUpPk:count 1041
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[4].eth[0].mac passedUpPk:sum(packetBytes) 604900
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar StarLAN.host[4].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar StarLAN.host[4].eth[0].encap decapPk:count 1041
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar StarLAN.host[4].eth[0].encap decapPk:sum(packetBytes) 586162
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar StarLAN.host[4].eth[0].encap encapPk:count 1040
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar StarLAN.host[4].eth[0].encap encapPk:sum(packetBytes) 585658
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar StarLAN.host[4].pingApp[0] "Pings sent" 380
+scalar StarLAN.host[4].pingApp[0] "ping loss rate (%)" 0
+scalar StarLAN.host[4].pingApp[0] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[4].pingApp[0] pingRxSeq:count 291
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[4].pingApp[0] pingTxSeq:count 290
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[4].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[4].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[4].pingApp[0] rtt:mean 0.0017243949928092
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[4].pingApp[1] "Pings sent" 377
+scalar StarLAN.host[4].pingApp[1] "ping loss rate (%)" 0
+scalar StarLAN.host[4].pingApp[1] "ping out-of-order rate (%)" 0.26525198938992
+scalar StarLAN.host[4].pingApp[1] pingRxSeq:count 288
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[4].pingApp[1] pingTxSeq:count 288
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[4].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[4].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[4].pingApp[1] rtt:mean 0.002741022429289
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[5].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar StarLAN.host[5].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar StarLAN.host[5].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar StarLAN.host[5].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar StarLAN.host[5].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar StarLAN.host[5].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[5].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[5].lo0.lo rcvdPkFromHL:count 104
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar StarLAN.host[5].lo0.lo rcvdPkFromHL:sum(packetBytes) 50242
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar StarLAN.host[5].lo0.lo passedUpPk:count 104
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[5].lo0.lo passedUpPk:sum(packetBytes) 50242
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[5].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[5].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.host[5].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[5].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[5].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].queue.dataQueue queueLength:max 2
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[5].eth[0].queue.dataQueue queueLength:timeavg 0.00051852968851437
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[5].eth[0].queue.dataQueue queueingTime:histogram
+field count 1017
+field mean 7.6419230609636e-006
+field stddev 5.1586882336462e-005
+field min 0
+field max 0.000542913123
+field sum 0.007771835753
+field sqrsum 2.7631775029299e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.000182034512	0
+bin	-0.00015776324373333	0
+bin	-0.00013349197546667	0
+bin	-0.0001092207072	0
+bin	-8.4949438933333e-005	0
+bin	-6.0678170666667e-005	0
+bin	-3.64069024e-005	0
+bin	-1.2135634133333e-005	987
+bin	1.2135634133333e-005	3
+bin	3.64069024e-005	2
+bin	6.0678170666667e-005	0
+bin	8.4949438933333e-005	1
+bin	0.0001092207072	3
+bin	0.00013349197546667	1
+bin	0.00015776324373333	1
+bin	0.000182034512	2
+bin	0.00020630578026667	1
+bin	0.00023057704853333	0
+bin	0.0002548483168	1
+bin	0.00027911958506667	2
+bin	0.00030339085333333	1
+bin	0.0003276621216	0
+bin	0.00035193338986667	4
+bin	0.00037620465813333	2
+bin	0.0004004759264	1
+bin	0.00042474719466667	2
+bin	0.00044901846293333	0
+bin	0.0004732897312	1
+bin	0.00049756099946667	1
+bin	0.00052183226773333	1
+bin	0.000546103536	0
+scalar StarLAN.host[5].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[5].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].queue.dataQueue rcvdPk:count 1017
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[5].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 522305
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].mac "simulated time" 20
+scalar StarLAN.host[5].eth[0].mac full-duplex 1
+scalar StarLAN.host[5].eth[0].mac "frames/sec sent" 68
+scalar StarLAN.host[5].eth[0].mac "frames/sec rcvd" 69.8
+scalar StarLAN.host[5].eth[0].mac "bits/sec sent" 276365.6
+scalar StarLAN.host[5].eth[0].mac "bits/sec rcvd" 277287.2
+scalar StarLAN.host[5].eth[0].mac "rx channel idle (%)" 97.182456
+scalar StarLAN.host[5].eth[0].mac "rx channel utilization (%)" 2.817544
+scalar StarLAN.host[5].eth[0].mac rxPkFromHL:count 1017
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.host[5].eth[0].mac rxPkFromHL:sum(packetBytes) 522305
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.host[5].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.host[5].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.host[5].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.host[5].eth[0].mac txPk:count 1018
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.host[5].eth[0].mac txPk:sum(packetBytes) 522827
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.host[5].eth[0].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[5].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.host[5].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].mac rxPkOk:count 1017
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.host[5].eth[0].mac rxPkOk:sum(packetBytes) 522305
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].mac passedUpPk:count 1017
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[5].eth[0].mac passedUpPk:sum(packetBytes) 522305
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar StarLAN.host[5].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar StarLAN.host[5].eth[0].encap decapPk:count 1017
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar StarLAN.host[5].eth[0].encap decapPk:sum(packetBytes) 503999
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar StarLAN.host[5].eth[0].encap encapPk:count 1017
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar StarLAN.host[5].eth[0].encap encapPk:sum(packetBytes) 503999
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar StarLAN.host[5].pingApp[0] "Pings sent" 374
+scalar StarLAN.host[5].pingApp[0] "ping loss rate (%)" 0
+scalar StarLAN.host[5].pingApp[0] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[5].pingApp[0] pingRxSeq:count 284
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[5].pingApp[0] pingTxSeq:count 284
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[5].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[5].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[5].pingApp[0] rtt:mean 0.0022955890534373
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[5].pingApp[1] "Pings sent" 384
+scalar StarLAN.host[5].pingApp[1] "ping loss rate (%)" 0
+scalar StarLAN.host[5].pingApp[1] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[5].pingApp[1] pingRxSeq:count 284
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[5].pingApp[1] pingTxSeq:count 284
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[5].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[5].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[5].pingApp[1] rtt:mean 0.0012258574133755
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[6].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar StarLAN.host[6].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar StarLAN.host[6].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar StarLAN.host[6].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar StarLAN.host[6].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar StarLAN.host[6].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[6].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[6].lo0.lo rcvdPkFromHL:count 110
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar StarLAN.host[6].lo0.lo rcvdPkFromHL:sum(packetBytes) 39094
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar StarLAN.host[6].lo0.lo passedUpPk:count 110
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[6].lo0.lo passedUpPk:sum(packetBytes) 39094
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[6].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[6].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.host[6].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[6].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[6].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].queue.dataQueue queueLength:max 2
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[6].eth[0].queue.dataQueue queueLength:timeavg 0.00038267080876719
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[6].eth[0].queue.dataQueue queueingTime:histogram
+field count 1072
+field mean 5.3544266324627e-006
+field stddev 4.1317516958666e-005
+field min 0
+field max 0.000514441073
+field sum 0.00573994535
+field sqrsum 1.8590780656222e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1072
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.host[6].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[6].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].queue.dataQueue rcvdPk:count 1072
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[6].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 501144
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].mac "simulated time" 20
+scalar StarLAN.host[6].eth[0].mac full-duplex 1
+scalar StarLAN.host[6].eth[0].mac "frames/sec sent" 70.8
+scalar StarLAN.host[6].eth[0].mac "frames/sec rcvd" 72.6
+scalar StarLAN.host[6].eth[0].mac "bits/sec sent" 262066.4
+scalar StarLAN.host[6].eth[0].mac "bits/sec rcvd" 262988
+scalar StarLAN.host[6].eth[0].mac "rx channel idle (%)" 97.323656
+scalar StarLAN.host[6].eth[0].mac "rx channel utilization (%)" 2.676344
+scalar StarLAN.host[6].eth[0].mac rxPkFromHL:count 1072
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.host[6].eth[0].mac rxPkFromHL:sum(packetBytes) 501144
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.host[6].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.host[6].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.host[6].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.host[6].eth[0].mac txPk:count 1072
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.host[6].eth[0].mac txPk:sum(packetBytes) 501144
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.host[6].eth[0].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[6].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.host[6].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].mac rxPkOk:count 1072
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.host[6].eth[0].mac rxPkOk:sum(packetBytes) 501144
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].mac passedUpPk:count 1072
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[6].eth[0].mac passedUpPk:sum(packetBytes) 501144
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar StarLAN.host[6].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar StarLAN.host[6].eth[0].encap decapPk:count 1072
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar StarLAN.host[6].eth[0].encap decapPk:sum(packetBytes) 481848
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar StarLAN.host[6].eth[0].encap encapPk:count 1072
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar StarLAN.host[6].eth[0].encap encapPk:sum(packetBytes) 481848
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar StarLAN.host[6].pingApp[0] "Pings sent" 391
+scalar StarLAN.host[6].pingApp[0] "ping loss rate (%)" 0
+scalar StarLAN.host[6].pingApp[0] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[6].pingApp[0] pingRxSeq:count 297
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[6].pingApp[0] pingTxSeq:count 297
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[6].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[6].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[6].pingApp[0] rtt:mean 0.00082612467857415
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[6].pingApp[1] "Pings sent" 387
+scalar StarLAN.host[6].pingApp[1] "ping loss rate (%)" 0
+scalar StarLAN.host[6].pingApp[1] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[6].pingApp[1] pingRxSeq:count 298
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[6].pingApp[1] pingTxSeq:count 298
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[6].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[6].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[6].pingApp[1] rtt:mean 0.0019388486361625
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[7].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar StarLAN.host[7].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar StarLAN.host[7].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar StarLAN.host[7].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar StarLAN.host[7].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar StarLAN.host[7].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[7].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[7].lo0.lo rcvdPkFromHL:count 126
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar StarLAN.host[7].lo0.lo rcvdPkFromHL:sum(packetBytes) 48528
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar StarLAN.host[7].lo0.lo passedUpPk:count 126
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[7].lo0.lo passedUpPk:sum(packetBytes) 48528
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[7].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[7].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.host[7].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[7].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[7].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[7].eth[0].queue.dataQueue queueLength:timeavg 0.00035276046133862
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[7].eth[0].queue.dataQueue queueingTime:histogram
+field count 1027
+field mean 5.1423475559883e-006
+field stddev 3.8789408963745e-005
+field min 0
+field max 0.000557624127
+field sum 0.00528119094
+field sqrsum 1.5708960415213e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.0001007146305	0
+bin	-8.72860131e-005	0
+bin	-7.38573957e-005	0
+bin	-6.04287783e-005	0
+bin	-4.70001609e-005	0
+bin	-3.35715435e-005	0
+bin	-2.01429261e-005	0
+bin	-6.7143087e-006	1002
+bin	6.7143087e-006	1
+bin	2.01429261e-005	0
+bin	3.35715435e-005	0
+bin	4.70001609e-005	2
+bin	6.04287783e-005	2
+bin	7.38573957e-005	0
+bin	8.72860131e-005	1
+bin	0.0001007146305	1
+bin	0.0001141432479	2
+bin	0.0001275718653	1
+bin	0.0001410004827	0
+bin	0.0001544291001	0
+bin	0.0001678577175	1
+bin	0.0001812863349	1
+bin	0.0001947149523	2
+bin	0.0002081435697	2
+bin	0.0002215721871	0
+bin	0.0002350008045	0
+bin	0.0002484294219	1
+bin	0.0002618580393	0
+bin	0.0002752866567	2
+bin	0.0002887152741	0
+bin	0.0003021438915	6
+scalar StarLAN.host[7].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[7].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].queue.dataQueue rcvdPk:count 1027
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[7].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 472181
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].mac "simulated time" 20
+scalar StarLAN.host[7].eth[0].mac full-duplex 1
+scalar StarLAN.host[7].eth[0].mac "frames/sec sent" 68.3
+scalar StarLAN.host[7].eth[0].mac "frames/sec rcvd" 70.1
+scalar StarLAN.host[7].eth[0].mac "bits/sec sent" 251714.8
+scalar StarLAN.host[7].eth[0].mac "bits/sec rcvd" 252636.4
+scalar StarLAN.host[7].eth[0].mac "rx channel idle (%)" 97.428772
+scalar StarLAN.host[7].eth[0].mac "rx channel utilization (%)" 2.571228
+scalar StarLAN.host[7].eth[0].mac rxPkFromHL:count 1027
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.host[7].eth[0].mac rxPkFromHL:sum(packetBytes) 472181
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.host[7].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.host[7].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.host[7].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.host[7].eth[0].mac txPk:count 1027
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.host[7].eth[0].mac txPk:sum(packetBytes) 472181
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.host[7].eth[0].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[7].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.host[7].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].mac rxPkOk:count 1027
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.host[7].eth[0].mac rxPkOk:sum(packetBytes) 472181
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].mac passedUpPk:count 1027
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[7].eth[0].mac passedUpPk:sum(packetBytes) 472181
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar StarLAN.host[7].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar StarLAN.host[7].eth[0].encap decapPk:count 1027
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar StarLAN.host[7].eth[0].encap decapPk:sum(packetBytes) 453695
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar StarLAN.host[7].eth[0].encap encapPk:count 1027
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar StarLAN.host[7].eth[0].encap encapPk:sum(packetBytes) 453695
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar StarLAN.host[7].pingApp[0] "Pings sent" 379
+scalar StarLAN.host[7].pingApp[0] "ping loss rate (%)" 0
+scalar StarLAN.host[7].pingApp[0] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[7].pingApp[0] pingRxSeq:count 283
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[7].pingApp[0] pingTxSeq:count 283
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[7].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[7].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[7].pingApp[0] rtt:mean 0.001004565558504
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[7].pingApp[1] "Pings sent" 380
+scalar StarLAN.host[7].pingApp[1] "ping loss rate (%)" 0
+scalar StarLAN.host[7].pingApp[1] "ping out-of-order rate (%)" 0.26315789473684
+scalar StarLAN.host[7].pingApp[1] pingRxSeq:count 285
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[7].pingApp[1] pingTxSeq:count 285
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[7].pingApp[1] numOutOfOrderArrivals:last 1
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[7].pingApp[1] numLost:last 0
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[7].pingApp[1] rtt:mean 0.0017153433148314
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[8].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar StarLAN.host[8].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar StarLAN.host[8].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar StarLAN.host[8].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar StarLAN.host[8].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar StarLAN.host[8].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[8].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[8].lo0.lo rcvdPkFromHL:count 110
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar StarLAN.host[8].lo0.lo rcvdPkFromHL:sum(packetBytes) 83010
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar StarLAN.host[8].lo0.lo passedUpPk:count 110
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[8].lo0.lo passedUpPk:sum(packetBytes) 83010
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[8].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[8].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.host[8].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[8].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[8].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[8].eth[0].queue.dataQueue queueLength:timeavg 0.00080751606081415
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[8].eth[0].queue.dataQueue queueingTime:histogram
+field count 1061
+field mean 1.1415821468426e-005
+field stddev 6.7504036004574e-005
+field min 0
+field max 0.000606899739
+field sum 0.012112186578
+field sqrsum 4.9684731290879e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.0003034498695	0
+bin	-0.0002629898869	0
+bin	-0.0002225299043	0
+bin	-0.0001820699217	0
+bin	-0.0001416099391	0
+bin	-0.0001011499565	0
+bin	-6.06899739e-005	0
+bin	-2.02299913e-005	1022
+bin	2.02299913e-005	2
+bin	6.06899739e-005	3
+bin	0.0001011499565	4
+bin	0.0001416099391	3
+bin	0.0001820699217	3
+bin	0.0002225299043	4
+bin	0.0002629898869	1
+bin	0.0003034498695	1
+bin	0.0003439098521	3
+bin	0.0003843698347	1
+bin	0.0004248298173	4
+bin	0.0004652897999	2
+bin	0.0005057497825	5
+bin	0.0005462097651	1
+bin	0.0005866697477	2
+bin	0.0006271297303	0
+bin	0.0006675897129	0
+bin	0.0007080496955	0
+bin	0.0007485096781	0
+bin	0.0007889696607	0
+bin	0.0008294296433	0
+bin	0.0008698896259	0
+bin	0.0009103496085	0
+scalar StarLAN.host[8].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[8].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].queue.dataQueue rcvdPk:count 1061
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[8].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 661799
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].mac "simulated time" 20
+scalar StarLAN.host[8].eth[0].mac full-duplex 1
+scalar StarLAN.host[8].eth[0].mac "frames/sec sent" 69.1
+scalar StarLAN.host[8].eth[0].mac "frames/sec rcvd" 70.9
+scalar StarLAN.host[8].eth[0].mac "bits/sec sent" 341411.2
+scalar StarLAN.host[8].eth[0].mac "bits/sec rcvd" 342332.8
+scalar StarLAN.host[8].eth[0].mac "rx channel idle (%)" 96.531296
+scalar StarLAN.host[8].eth[0].mac "rx channel utilization (%)" 3.468704
+scalar StarLAN.host[8].eth[0].mac rxPkFromHL:count 1061
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.host[8].eth[0].mac rxPkFromHL:sum(packetBytes) 661799
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.host[8].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.host[8].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.host[8].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.host[8].eth[0].mac txPk:count 1061
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.host[8].eth[0].mac txPk:sum(packetBytes) 661799
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.host[8].eth[0].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[8].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.host[8].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].mac rxPkOk:count 1061
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.host[8].eth[0].mac rxPkOk:sum(packetBytes) 661799
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].mac passedUpPk:count 1061
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[8].eth[0].mac passedUpPk:sum(packetBytes) 661799
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar StarLAN.host[8].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar StarLAN.host[8].eth[0].encap decapPk:count 1061
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar StarLAN.host[8].eth[0].encap decapPk:sum(packetBytes) 642701
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar StarLAN.host[8].eth[0].encap encapPk:count 1061
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar StarLAN.host[8].eth[0].encap encapPk:sum(packetBytes) 642701
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar StarLAN.host[8].pingApp[0] "Pings sent" 371
+scalar StarLAN.host[8].pingApp[0] "ping loss rate (%)" 0
+scalar StarLAN.host[8].pingApp[0] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[8].pingApp[0] pingRxSeq:count 286
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[8].pingApp[0] pingTxSeq:count 286
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[8].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[8].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[8].pingApp[0] rtt:mean 0.0025296793030078
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[8].pingApp[1] "Pings sent" 398
+scalar StarLAN.host[8].pingApp[1] "ping loss rate (%)" 0
+scalar StarLAN.host[8].pingApp[1] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[8].pingApp[1] pingRxSeq:count 309
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[8].pingApp[1] pingTxSeq:count 309
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[8].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[8].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[8].pingApp[1] rtt:mean 0.0025030915353509
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[9].networkLayer.arp sentReply:count 0
+attr title "ARP replies sent, count"
+scalar StarLAN.host[9].networkLayer.arp sentReq:count 0
+attr title "ARP request sent, count"
+scalar StarLAN.host[9].networkLayer.arp failedARPResolution:count 0
+attr title "ARP failed resolutions, count"
+scalar StarLAN.host[9].networkLayer.arp completedARPResolution:count 0
+attr title "ARP completed resolutions, count"
+scalar StarLAN.host[9].networkLayer.arp initiatedARPResolution:count 0
+attr title "ARP initiated resolutions, count"
+scalar StarLAN.host[9].lo0.lo droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[9].lo0.lo droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[9].lo0.lo rcvdPkFromHL:count 98
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar StarLAN.host[9].lo0.lo rcvdPkFromHL:sum(packetBytes) 22158
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar StarLAN.host[9].lo0.lo passedUpPk:count 98
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[9].lo0.lo passedUpPk:sum(packetBytes) 22158
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[9].eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[9].eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.host[9].eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[9].eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[9].eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.host[9].eth[0].queue.dataQueue queueLength:timeavg 0.00031918168760377
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.host[9].eth[0].queue.dataQueue queueingTime:histogram
+field count 1036
+field mean 4.6165433291506e-006
+field stddev 3.6875743299358e-005
+field min 0
+field max 0.000495203031
+field sum 0.004782738889
+field sqrsum 1.429493880729e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.00019	0
+bin	-0.00016466666666667	0
+bin	-0.00013933333333333	0
+bin	-0.000114	0
+bin	-8.8666666666667e-005	0
+bin	-6.3333333333333e-005	0
+bin	-3.8e-005	0
+bin	-1.2666666666667e-005	1014
+bin	1.2666666666667e-005	1
+bin	3.8e-005	2
+bin	6.3333333333333e-005	1
+bin	8.8666666666667e-005	2
+bin	0.000114	1
+bin	0.00013933333333333	3
+bin	0.00016466666666667	1
+bin	0.00019	0
+bin	0.00021533333333333	2
+bin	0.00024066666666667	1
+bin	0.000266	2
+bin	0.00029133333333333	0
+bin	0.00031666666666667	2
+bin	0.000342	0
+bin	0.00036733333333333	1
+bin	0.00039266666666667	1
+bin	0.000418	0
+bin	0.00044333333333333	1
+bin	0.00046866666666667	0
+bin	0.000494	1
+bin	0.00051933333333333	0
+bin	0.00054466666666667	0
+bin	0.00057	0
+scalar StarLAN.host[9].eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.host[9].eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].queue.dataQueue rcvdPk:count 1036
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.host[9].eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 392561
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].mac "simulated time" 20
+scalar StarLAN.host[9].eth[0].mac full-duplex 1
+scalar StarLAN.host[9].eth[0].mac "frames/sec sent" 68.7
+scalar StarLAN.host[9].eth[0].mac "frames/sec rcvd" 70.5
+scalar StarLAN.host[9].eth[0].mac "bits/sec sent" 209456.4
+scalar StarLAN.host[9].eth[0].mac "bits/sec rcvd" 210378
+scalar StarLAN.host[9].eth[0].mac "rx channel idle (%)" 97.8511
+scalar StarLAN.host[9].eth[0].mac "rx channel utilization (%)" 2.1489
+scalar StarLAN.host[9].eth[0].mac rxPkFromHL:count 1036
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.host[9].eth[0].mac rxPkFromHL:sum(packetBytes) 392561
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.host[9].eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.host[9].eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.host[9].eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.host[9].eth[0].mac txPk:count 1036
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.host[9].eth[0].mac txPk:sum(packetBytes) 392561
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.host[9].eth[0].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.host[9].eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.host[9].eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].mac rxPkOk:count 1036
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.host[9].eth[0].mac rxPkOk:sum(packetBytes) 392561
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].mac passedUpPk:count 1036
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.host[9].eth[0].mac passedUpPk:sum(packetBytes) 392561
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].encap pauseSent:count 0
+attr title "pause sent, count"
+scalar StarLAN.host[9].eth[0].encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar StarLAN.host[9].eth[0].encap decapPk:count 1036
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar StarLAN.host[9].eth[0].encap decapPk:sum(packetBytes) 373913
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar StarLAN.host[9].eth[0].encap encapPk:count 1036
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar StarLAN.host[9].eth[0].encap encapPk:sum(packetBytes) 373913
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar StarLAN.host[9].pingApp[0] "Pings sent" 390
+scalar StarLAN.host[9].pingApp[0] "ping loss rate (%)" 0
+scalar StarLAN.host[9].pingApp[0] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[9].pingApp[0] pingRxSeq:count 305
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[9].pingApp[0] pingTxSeq:count 305
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[9].pingApp[0] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[9].pingApp[0] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[9].pingApp[0] rtt:mean 0.00097908548773741
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.host[9].pingApp[1] "Pings sent" 380
+scalar StarLAN.host[9].pingApp[1] "ping loss rate (%)" 0
+scalar StarLAN.host[9].pingApp[1] "ping out-of-order rate (%)" 0
+scalar StarLAN.host[9].pingApp[1] pingRxSeq:count 286
+attr interpolationmode none
+attr title "ping rx seq, count"
+scalar StarLAN.host[9].pingApp[1] pingTxSeq:count 286
+attr interpolationmode none
+attr title "ping tx seq, count"
+scalar StarLAN.host[9].pingApp[1] numOutOfOrderArrivals:last nan
+attr interpolationmode none
+attr title "ping out-of-order arrivals, last"
+scalar StarLAN.host[9].pingApp[1] numLost:last nan
+attr interpolationmode none
+attr title "pings lost, last"
+scalar StarLAN.host[9].pingApp[1] rtt:mean 0.0006619951394356
+attr interpolationmode none
+attr title "ping round-trip time, mean"
+attr unit s
+scalar StarLAN.router.relayUnit "number of received BPDUs from STP module" 0
+scalar StarLAN.router.relayUnit "number of received frames from network (including BPDUs)" 13974
+scalar StarLAN.router.relayUnit "number of dropped frames (including BPDUs)" 0
+scalar StarLAN.router.relayUnit "number of delivered BPDUs to the STP module" 0
+scalar StarLAN.router.relayUnit "number of dispatched BPDU frames to the network" 0
+scalar StarLAN.router.relayUnit "number of dispatched non-BDPU frames to the network" 14334
+scalar StarLAN.router.eth[0].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[0].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[0].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.router.eth[0].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[0].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[0].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[0].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[0].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[0].queue.dataQueue queueLength:timeavg 0.00037993128530935
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[0].queue.dataQueue queueingTime:histogram
+field count 1059
+field mean 5.3809913446648e-006
+field stddev 4.2571426726528e-005
+field min 0
+field max 0.000577581646
+field sum 0.005698469834
+field sqrsum 1.9481047200516e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.000243692608	0
+bin	-0.00021120026026667	0
+bin	-0.00017870791253333	0
+bin	-0.0001462155648	0
+bin	-0.00011372321706667	0
+bin	-8.1230869333333e-005	0
+bin	-4.87385216e-005	0
+bin	-1.6246173866667e-005	1034
+bin	1.6246173866667e-005	3
+bin	4.87385216e-005	2
+bin	8.1230869333333e-005	2
+bin	0.00011372321706667	2
+bin	0.0001462155648	5
+bin	0.00017870791253333	2
+bin	0.00021120026026667	0
+bin	0.000243692608	0
+bin	0.00027618495573333	1
+bin	0.00030867730346667	1
+bin	0.0003411696512	0
+bin	0.00037366199893333	2
+bin	0.00040615434666667	0
+bin	0.0004386466944	3
+bin	0.00047113904213333	1
+bin	0.00050363138986667	0
+bin	0.0005361237376	0
+bin	0.00056861608533333	1
+bin	0.00060110843306667	0
+bin	0.0006336007808	0
+bin	0.00066609312853333	0
+bin	0.00069858547626667	0
+bin	0.000731077824	0
+scalar StarLAN.router.eth[0].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[0].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[0].queue.dataQueue rcvdPk:count 1059
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[0].queue.dataQueue rcvdPk:sum(packetBytes) 537844
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[0].mac "simulated time" 20
+scalar StarLAN.router.eth[0].mac full-duplex 1
+scalar StarLAN.router.eth[0].mac "frames/sec sent" 72.8
+scalar StarLAN.router.eth[0].mac "frames/sec rcvd" 71
+scalar StarLAN.router.eth[0].mac "bits/sec sent" 288515.6
+scalar StarLAN.router.eth[0].mac "bits/sec rcvd" 287594
+scalar StarLAN.router.eth[0].mac "rx channel idle (%)" 97.07862
+scalar StarLAN.router.eth[0].mac "rx channel utilization (%)" 2.92138
+scalar StarLAN.router.eth[0].mac "rx channel collision (%)" 0
+scalar StarLAN.router.eth[0].mac collisions 0
+scalar StarLAN.router.eth[0].mac backoffs 0
+scalar StarLAN.router.eth[0].mac backoff:count 0
+attr interpolationmode none
+attr title "backoff, count"
+scalar StarLAN.router.eth[0].mac collision:count 0
+attr interpolationmode none
+attr title "collision, count"
+scalar StarLAN.router.eth[0].mac rxPkFromHL:count 1059
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.router.eth[0].mac rxPkFromHL:sum(packetBytes) 537844
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.router.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.router.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.router.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.router.eth[0].mac txPk:count 1059
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.router.eth[0].mac txPk:sum(packetBytes) 537844
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.router.eth[0].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.router.eth[0].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.router.eth[0].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.router.eth[0].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.router.eth[0].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.router.eth[0].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.router.eth[0].mac rxPkOk:count 1059
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.router.eth[0].mac rxPkOk:sum(packetBytes) 537844
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.router.eth[0].mac passedUpPk:count 1059
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.router.eth[0].mac passedUpPk:sum(packetBytes) 537844
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[1].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[1].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[1].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.router.eth[1].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[1].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[1].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[1].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[1].queue.dataQueue queueLength:max 2
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[1].queue.dataQueue queueLength:timeavg 0.0005802507324072
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[1].queue.dataQueue queueingTime:histogram
+field count 1070
+field mean 8.1339306485981e-006
+field stddev 5.1212650439147e-005
+field min 0
+field max 0.000622055147
+field sum 0.008703305794
+field sqrsum 2.8744964047294e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.0003052527865	0
+bin	-0.00026455241496667	0
+bin	-0.00022385204343333	0
+bin	-0.0001831516719	0
+bin	-0.00014245130036667	0
+bin	-0.00010175092883333	0
+bin	-6.10505573e-005	0
+bin	-2.0350185766667e-005	1034
+bin	2.0350185766667e-005	3
+bin	6.10505573e-005	2
+bin	0.00010175092883333	7
+bin	0.00014245130036667	3
+bin	0.0001831516719	4
+bin	0.00022385204343333	6
+bin	0.00026455241496667	0
+bin	0.0003052527865	3
+bin	0.00034595315803333	4
+bin	0.00038665352956667	0
+bin	0.0004273539011	0
+bin	0.00046805427263333	2
+bin	0.00050875464416667	0
+bin	0.0005494550157	0
+bin	0.00059015538723333	2
+bin	0.00063085575876667	0
+bin	0.0006715561303	0
+bin	0.00071225650183333	0
+bin	0.00075295687336667	0
+bin	0.0007936572449	0
+bin	0.00083435761643333	0
+bin	0.00087505798796667	0
+bin	0.0009157583595	0
+scalar StarLAN.router.eth[1].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[1].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[1].queue.dataQueue rcvdPk:count 1070
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[1].queue.dataQueue rcvdPk:sum(packetBytes) 500034
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[1].mac "simulated time" 20
+scalar StarLAN.router.eth[1].mac full-duplex 1
+scalar StarLAN.router.eth[1].mac "frames/sec sent" 72.7
+scalar StarLAN.router.eth[1].mac "frames/sec rcvd" 70.9
+scalar StarLAN.router.eth[1].mac "bits/sec sent" 264456.8
+scalar StarLAN.router.eth[1].mac "bits/sec rcvd" 263535.2
+scalar StarLAN.router.eth[1].mac "rx channel idle (%)" 97.319272
+scalar StarLAN.router.eth[1].mac "rx channel utilization (%)" 2.680728
+scalar StarLAN.router.eth[1].mac "rx channel collision (%)" 0
+scalar StarLAN.router.eth[1].mac collisions 0
+scalar StarLAN.router.eth[1].mac backoffs 0
+scalar StarLAN.router.eth[1].mac backoff:count 0
+attr interpolationmode none
+attr title "backoff, count"
+scalar StarLAN.router.eth[1].mac collision:count 0
+attr interpolationmode none
+attr title "collision, count"
+scalar StarLAN.router.eth[1].mac rxPkFromHL:count 1070
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.router.eth[1].mac rxPkFromHL:sum(packetBytes) 500034
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.router.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.router.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.router.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.router.eth[1].mac txPk:count 1070
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.router.eth[1].mac txPk:sum(packetBytes) 500034
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.router.eth[1].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.router.eth[1].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.router.eth[1].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.router.eth[1].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.router.eth[1].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.router.eth[1].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.router.eth[1].mac rxPkOk:count 1070
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.router.eth[1].mac rxPkOk:sum(packetBytes) 500034
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.router.eth[1].mac passedUpPk:count 1070
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.router.eth[1].mac passedUpPk:sum(packetBytes) 500034
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[2].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[2].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[2].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.router.eth[2].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[2].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[2].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[2].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[2].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[2].queue.dataQueue queueLength:timeavg 0.00052674807687841
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[2].queue.dataQueue queueingTime:histogram
+field count 1091
+field mean 7.2325990082493e-006
+field stddev 4.6363301678516e-005
+field min 0
+field max 0.000597766859
+field sum 0.007890765518
+field sqrsum 2.4000865022209e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.0002988834295	0
+bin	-0.00025903230556667	0
+bin	-0.00021918118163333	0
+bin	-0.0001793300577	0
+bin	-0.00013947893376667	0
+bin	-9.9627809833333e-005	0
+bin	-5.97766859e-005	0
+bin	-1.9925561966667e-005	1057
+bin	1.9925561966667e-005	2
+bin	5.97766859e-005	2
+bin	9.9627809833333e-005	7
+bin	0.00013947893376667	2
+bin	0.0001793300577	7
+bin	0.00021918118163333	2
+bin	0.00025903230556667	1
+bin	0.0002988834295	1
+bin	0.00033873455343333	5
+bin	0.00037858567736667	2
+bin	0.0004184368013	2
+bin	0.00045828792523333	0
+bin	0.00049813904916667	0
+bin	0.0005379901731	0
+bin	0.00057784129703333	1
+bin	0.00061769242096667	0
+bin	0.0006575435449	0
+bin	0.00069739466883333	0
+bin	0.00073724579276667	0
+bin	0.0007770969167	0
+bin	0.00081694804063333	0
+bin	0.00085679916456667	0
+bin	0.0008966502885	0
+scalar StarLAN.router.eth[2].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[2].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[2].queue.dataQueue rcvdPk:count 1091
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[2].queue.dataQueue rcvdPk:sum(packetBytes) 588459
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[2].mac "simulated time" 20
+scalar StarLAN.router.eth[2].mac full-duplex 1
+scalar StarLAN.router.eth[2].mac "frames/sec sent" 74.45
+scalar StarLAN.router.eth[2].mac "frames/sec rcvd" 72.65
+scalar StarLAN.router.eth[2].mac "bits/sec sent" 313463.6
+scalar StarLAN.router.eth[2].mac "bits/sec rcvd" 312542
+scalar StarLAN.router.eth[2].mac "rx channel idle (%)" 96.828084
+scalar StarLAN.router.eth[2].mac "rx channel utilization (%)" 3.171916
+scalar StarLAN.router.eth[2].mac "rx channel collision (%)" 0
+scalar StarLAN.router.eth[2].mac collisions 0
+scalar StarLAN.router.eth[2].mac backoffs 0
+scalar StarLAN.router.eth[2].mac backoff:count 0
+attr interpolationmode none
+attr title "backoff, count"
+scalar StarLAN.router.eth[2].mac collision:count 0
+attr interpolationmode none
+attr title "collision, count"
+scalar StarLAN.router.eth[2].mac rxPkFromHL:count 1091
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.router.eth[2].mac rxPkFromHL:sum(packetBytes) 588459
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[2].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.router.eth[2].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.router.eth[2].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.router.eth[2].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.router.eth[2].mac txPk:count 1091
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.router.eth[2].mac txPk:sum(packetBytes) 588459
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.router.eth[2].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.router.eth[2].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.router.eth[2].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.router.eth[2].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.router.eth[2].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.router.eth[2].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.router.eth[2].mac rxPkOk:count 1091
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.router.eth[2].mac rxPkOk:sum(packetBytes) 588459
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.router.eth[2].mac passedUpPk:count 1091
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.router.eth[2].mac passedUpPk:sum(packetBytes) 588459
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[3].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[3].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[3].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.router.eth[3].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[3].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[3].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[3].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[3].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[3].queue.dataQueue queueLength:timeavg 0.00038410470695883
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[3].queue.dataQueue queueingTime:histogram
+field count 1115
+field mean 5.1646004466368e-006
+field stddev 3.6751494401171e-005
+field min 0
+field max 0.000558263026
+field sum 0.005758529498
+field sqrsum 1.5343894915787e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-1.3724832e-005	0
+bin	-1.18948544e-005	0
+bin	-1.00648768e-005	0
+bin	-8.2348992e-006	0
+bin	-6.4049216e-006	0
+bin	-4.574944e-006	0
+bin	-2.7449664e-006	0
+bin	-9.149888e-007	1085
+bin	9.149888e-007	0
+bin	2.7449664e-006	0
+bin	4.574944e-006	0
+bin	6.4049216e-006	0
+bin	8.2348992e-006	0
+bin	1.00648768e-005	0
+bin	1.18948544e-005	0
+bin	1.3724832e-005	0
+bin	1.55548096e-005	0
+bin	1.73847872e-005	0
+bin	1.92147648e-005	1
+bin	2.10447424e-005	0
+bin	2.287472e-005	0
+bin	2.47046976e-005	0
+bin	2.65346752e-005	1
+bin	2.83646528e-005	0
+bin	3.01946304e-005	0
+bin	3.2024608e-005	0
+bin	3.38545856e-005	0
+bin	3.56845632e-005	0
+bin	3.75145408e-005	0
+bin	3.93445184e-005	0
+bin	4.1174496e-005	28
+scalar StarLAN.router.eth[3].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[3].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[3].queue.dataQueue rcvdPk:count 1115
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[3].queue.dataQueue rcvdPk:sum(packetBytes) 519787
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[3].mac "simulated time" 20
+scalar StarLAN.router.eth[3].mac full-duplex 1
+scalar StarLAN.router.eth[3].mac "frames/sec sent" 73.4
+scalar StarLAN.router.eth[3].mac "frames/sec rcvd" 71.6
+scalar StarLAN.router.eth[3].mac "bits/sec sent" 266646
+scalar StarLAN.router.eth[3].mac "bits/sec rcvd" 265724.4
+scalar StarLAN.router.eth[3].mac "rx channel idle (%)" 97.296932
+scalar StarLAN.router.eth[3].mac "rx channel utilization (%)" 2.703068
+scalar StarLAN.router.eth[3].mac "rx channel collision (%)" 0
+scalar StarLAN.router.eth[3].mac collisions 0
+scalar StarLAN.router.eth[3].mac backoffs 0
+scalar StarLAN.router.eth[3].mac backoff:count 0
+attr interpolationmode none
+attr title "backoff, count"
+scalar StarLAN.router.eth[3].mac collision:count 0
+attr interpolationmode none
+attr title "collision, count"
+scalar StarLAN.router.eth[3].mac rxPkFromHL:count 1115
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.router.eth[3].mac rxPkFromHL:sum(packetBytes) 519787
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[3].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.router.eth[3].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.router.eth[3].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.router.eth[3].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.router.eth[3].mac txPk:count 1115
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.router.eth[3].mac txPk:sum(packetBytes) 519787
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.router.eth[3].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.router.eth[3].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.router.eth[3].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.router.eth[3].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.router.eth[3].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.router.eth[3].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.router.eth[3].mac rxPkOk:count 1115
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.router.eth[3].mac rxPkOk:sum(packetBytes) 519787
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.router.eth[3].mac passedUpPk:count 1115
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.router.eth[3].mac passedUpPk:sum(packetBytes) 519787
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[4].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[4].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[4].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.router.eth[4].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[4].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[4].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[4].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[4].queue.dataQueue queueLength:max 2
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[4].queue.dataQueue queueLength:timeavg 0.00075886067647408
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[4].queue.dataQueue queueingTime:histogram
+field count 1041
+field mean 1.0934310238232e-005
+field stddev 6.908120708112e-005
+field min 0
+field max 0.000708403424
+field sum 0.011382616958
+field sqrsum 5.0875627637977e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.0001800180495	0
+bin	-0.0001560156429	0
+bin	-0.0001320132363	0
+bin	-0.0001080108297	0
+bin	-8.40084231e-005	0
+bin	-6.00060165e-005	0
+bin	-3.60036099e-005	0
+bin	-1.20012033e-005	1008
+bin	1.20012033e-005	0
+bin	3.60036099e-005	3
+bin	6.00060165e-005	0
+bin	8.40084231e-005	0
+bin	0.0001080108297	4
+bin	0.0001320132363	0
+bin	0.0001560156429	0
+bin	0.0001800180495	0
+bin	0.0002040204561	1
+bin	0.0002280228627	2
+bin	0.0002520252693	0
+bin	0.0002760276759	3
+bin	0.0003000300825	2
+bin	0.0003240324891	1
+bin	0.0003480348957	8
+bin	0.0003720373023	1
+bin	0.0003960397089	0
+bin	0.0004200421155	0
+bin	0.0004440445221	0
+bin	0.0004680469287	0
+bin	0.0004920493353	0
+bin	0.0005160517419	0
+bin	0.0005400541485	8
+scalar StarLAN.router.eth[4].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[4].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[4].queue.dataQueue rcvdPk:count 1041
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[4].queue.dataQueue rcvdPk:sum(packetBytes) 604900
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[4].mac "simulated time" 20
+scalar StarLAN.router.eth[4].mac full-duplex 1
+scalar StarLAN.router.eth[4].mac "frames/sec sent" 69.45
+scalar StarLAN.router.eth[4].mac "frames/sec rcvd" 67.65
+scalar StarLAN.router.eth[4].mac "bits/sec sent" 313389.2
+scalar StarLAN.router.eth[4].mac "bits/sec rcvd" 312467.6
+scalar StarLAN.router.eth[4].mac "rx channel idle (%)" 96.832028
+scalar StarLAN.router.eth[4].mac "rx channel utilization (%)" 3.167972
+scalar StarLAN.router.eth[4].mac "rx channel collision (%)" 0
+scalar StarLAN.router.eth[4].mac collisions 0
+scalar StarLAN.router.eth[4].mac backoffs 0
+scalar StarLAN.router.eth[4].mac backoff:count 0
+attr interpolationmode none
+attr title "backoff, count"
+scalar StarLAN.router.eth[4].mac collision:count 0
+attr interpolationmode none
+attr title "collision, count"
+scalar StarLAN.router.eth[4].mac rxPkFromHL:count 1041
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.router.eth[4].mac rxPkFromHL:sum(packetBytes) 604900
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[4].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.router.eth[4].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.router.eth[4].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.router.eth[4].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.router.eth[4].mac txPk:count 1041
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.router.eth[4].mac txPk:sum(packetBytes) 604900
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.router.eth[4].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.router.eth[4].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.router.eth[4].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.router.eth[4].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.router.eth[4].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.router.eth[4].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.router.eth[4].mac rxPkOk:count 1040
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.router.eth[4].mac rxPkOk:sum(packetBytes) 604378
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.router.eth[4].mac passedUpPk:count 1040
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.router.eth[4].mac passedUpPk:sum(packetBytes) 604378
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[5].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[5].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[5].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.router.eth[5].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[5].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[5].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[5].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[5].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[5].queue.dataQueue queueLength:timeavg 0.00040028865473638
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[5].queue.dataQueue queueingTime:histogram
+field count 1017
+field mean 5.8995689675516e-006
+field stddev 4.300813501203e-005
+field min 0
+field max 0.000550060208
+field sum 0.00599986164
+field sqrsum 1.9146914695893e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-5.6134253e-005	0
+bin	-4.8649685933333e-005	0
+bin	-4.1165118866667e-005	0
+bin	-3.36805518e-005	0
+bin	-2.6195984733333e-005	0
+bin	-1.8711417666667e-005	0
+bin	-1.12268506e-005	0
+bin	-3.7422835333333e-006	987
+bin	3.7422835333333e-006	1
+bin	1.12268506e-005	0
+bin	1.8711417666667e-005	0
+bin	2.6195984733333e-005	0
+bin	3.36805518e-005	0
+bin	4.1165118866667e-005	2
+bin	4.8649685933333e-005	1
+bin	5.6134253e-005	0
+bin	6.3618820066667e-005	5
+bin	7.1103387133333e-005	1
+bin	7.85879542e-005	1
+bin	8.6072521266667e-005	0
+bin	9.3557088333333e-005	1
+bin	0.0001010416554	0
+bin	0.00010852622246667	2
+bin	0.00011601078953333	1
+bin	0.0001234953566	0
+bin	0.00013097992366667	0
+bin	0.00013846449073333	0
+bin	0.0001459490578	0
+bin	0.00015343362486667	0
+bin	0.00016091819193333	0
+bin	0.000168402759	15
+scalar StarLAN.router.eth[5].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[5].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[5].queue.dataQueue rcvdPk:count 1017
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[5].queue.dataQueue rcvdPk:sum(packetBytes) 522305
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[5].mac "simulated time" 20
+scalar StarLAN.router.eth[5].mac full-duplex 1
+scalar StarLAN.router.eth[5].mac "frames/sec sent" 69.8
+scalar StarLAN.router.eth[5].mac "frames/sec rcvd" 68
+scalar StarLAN.router.eth[5].mac "bits/sec sent" 277287.2
+scalar StarLAN.router.eth[5].mac "bits/sec rcvd" 276365.6
+scalar StarLAN.router.eth[5].mac "rx channel idle (%)" 97.192824
+scalar StarLAN.router.eth[5].mac "rx channel utilization (%)" 2.807176
+scalar StarLAN.router.eth[5].mac "rx channel collision (%)" 0
+scalar StarLAN.router.eth[5].mac collisions 0
+scalar StarLAN.router.eth[5].mac backoffs 0
+scalar StarLAN.router.eth[5].mac backoff:count 0
+attr interpolationmode none
+attr title "backoff, count"
+scalar StarLAN.router.eth[5].mac collision:count 0
+attr interpolationmode none
+attr title "collision, count"
+scalar StarLAN.router.eth[5].mac rxPkFromHL:count 1017
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.router.eth[5].mac rxPkFromHL:sum(packetBytes) 522305
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[5].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.router.eth[5].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.router.eth[5].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.router.eth[5].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.router.eth[5].mac txPk:count 1017
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.router.eth[5].mac txPk:sum(packetBytes) 522305
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.router.eth[5].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.router.eth[5].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.router.eth[5].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.router.eth[5].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.router.eth[5].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.router.eth[5].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.router.eth[5].mac rxPkOk:count 1018
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.router.eth[5].mac rxPkOk:sum(packetBytes) 522827
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.router.eth[5].mac passedUpPk:count 1018
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.router.eth[5].mac passedUpPk:sum(packetBytes) 522827
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[6].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[6].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[6].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.router.eth[6].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[6].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[6].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[6].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[6].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[6].queue.dataQueue queueLength:timeavg 0.00031937950249196
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[6].queue.dataQueue queueingTime:histogram
+field count 1072
+field mean 4.4684102938433e-006
+field stddev 3.5715624641409e-005
+field min 0
+field max 0.000558488005
+field sum 0.004790135835
+field sqrsum 1.3875781506904e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	1072
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.router.eth[6].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[6].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[6].queue.dataQueue rcvdPk:count 1072
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[6].queue.dataQueue rcvdPk:sum(packetBytes) 501144
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[6].mac "simulated time" 20
+scalar StarLAN.router.eth[6].mac full-duplex 1
+scalar StarLAN.router.eth[6].mac "frames/sec sent" 72.6
+scalar StarLAN.router.eth[6].mac "frames/sec rcvd" 70.8
+scalar StarLAN.router.eth[6].mac "bits/sec sent" 262988
+scalar StarLAN.router.eth[6].mac "bits/sec rcvd" 262066.4
+scalar StarLAN.router.eth[6].mac "rx channel idle (%)" 97.334024
+scalar StarLAN.router.eth[6].mac "rx channel utilization (%)" 2.665976
+scalar StarLAN.router.eth[6].mac "rx channel collision (%)" 0
+scalar StarLAN.router.eth[6].mac collisions 0
+scalar StarLAN.router.eth[6].mac backoffs 0
+scalar StarLAN.router.eth[6].mac backoff:count 0
+attr interpolationmode none
+attr title "backoff, count"
+scalar StarLAN.router.eth[6].mac collision:count 0
+attr interpolationmode none
+attr title "collision, count"
+scalar StarLAN.router.eth[6].mac rxPkFromHL:count 1072
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.router.eth[6].mac rxPkFromHL:sum(packetBytes) 501144
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[6].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.router.eth[6].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.router.eth[6].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.router.eth[6].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.router.eth[6].mac txPk:count 1072
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.router.eth[6].mac txPk:sum(packetBytes) 501144
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.router.eth[6].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.router.eth[6].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.router.eth[6].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.router.eth[6].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.router.eth[6].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.router.eth[6].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.router.eth[6].mac rxPkOk:count 1072
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.router.eth[6].mac rxPkOk:sum(packetBytes) 501144
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.router.eth[6].mac passedUpPk:count 1072
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.router.eth[6].mac passedUpPk:sum(packetBytes) 501144
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[7].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[7].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[7].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.router.eth[7].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[7].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[7].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[7].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[7].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[7].queue.dataQueue queueLength:timeavg 0.00032616285293328
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[7].queue.dataQueue queueingTime:histogram
+field count 1027
+field mean 4.7547173359299e-006
+field stddev 3.7885015999383e-005
+field min 0
+field max 0.000625854167
+field sum 0.004883094704
+field sqrsum 1.4958093076847e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.000139178756	0
+bin	-0.00012062158853333	0
+bin	-0.00010206442106667	0
+bin	-8.35072536e-005	0
+bin	-6.4950086133333e-005	0
+bin	-4.6392918666667e-005	0
+bin	-2.78357512e-005	0
+bin	-9.2785837333333e-006	1004
+bin	9.2785837333333e-006	0
+bin	2.78357512e-005	1
+bin	4.6392918666667e-005	1
+bin	6.4950086133333e-005	0
+bin	8.35072536e-005	2
+bin	0.00010206442106667	4
+bin	0.00012062158853333	2
+bin	0.000139178756	0
+bin	0.00015773592346667	2
+bin	0.00017629309093333	0
+bin	0.0001948502584	2
+bin	0.00021340742586667	1
+bin	0.00023196459333333	1
+bin	0.0002505217608	1
+bin	0.00026907892826667	1
+bin	0.00028763609573333	0
+bin	0.0003061932632	1
+bin	0.00032475043066667	1
+bin	0.00034330759813333	0
+bin	0.0003618647656	0
+bin	0.00038042193306667	1
+bin	0.00039897910053333	0
+bin	0.000417536268	2
+scalar StarLAN.router.eth[7].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[7].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[7].queue.dataQueue rcvdPk:count 1027
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[7].queue.dataQueue rcvdPk:sum(packetBytes) 472181
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[7].mac "simulated time" 20
+scalar StarLAN.router.eth[7].mac full-duplex 1
+scalar StarLAN.router.eth[7].mac "frames/sec sent" 70.1
+scalar StarLAN.router.eth[7].mac "frames/sec rcvd" 68.3
+scalar StarLAN.router.eth[7].mac "bits/sec sent" 252636.4
+scalar StarLAN.router.eth[7].mac "bits/sec rcvd" 251714.8
+scalar StarLAN.router.eth[7].mac "rx channel idle (%)" 97.43914
+scalar StarLAN.router.eth[7].mac "rx channel utilization (%)" 2.56086
+scalar StarLAN.router.eth[7].mac "rx channel collision (%)" 0
+scalar StarLAN.router.eth[7].mac collisions 0
+scalar StarLAN.router.eth[7].mac backoffs 0
+scalar StarLAN.router.eth[7].mac backoff:count 0
+attr interpolationmode none
+attr title "backoff, count"
+scalar StarLAN.router.eth[7].mac collision:count 0
+attr interpolationmode none
+attr title "collision, count"
+scalar StarLAN.router.eth[7].mac rxPkFromHL:count 1027
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.router.eth[7].mac rxPkFromHL:sum(packetBytes) 472181
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[7].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.router.eth[7].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.router.eth[7].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.router.eth[7].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.router.eth[7].mac txPk:count 1027
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.router.eth[7].mac txPk:sum(packetBytes) 472181
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.router.eth[7].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.router.eth[7].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.router.eth[7].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.router.eth[7].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.router.eth[7].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.router.eth[7].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.router.eth[7].mac rxPkOk:count 1027
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.router.eth[7].mac rxPkOk:sum(packetBytes) 472181
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.router.eth[7].mac passedUpPk:count 1027
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.router.eth[7].mac passedUpPk:sum(packetBytes) 472181
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[8].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[8].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[8].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.router.eth[8].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[8].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[8].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[8].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[8].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[8].queue.dataQueue queueLength:timeavg 0.0005834485960787
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[8].queue.dataQueue queueingTime:histogram
+field count 1061
+field mean 8.2471527144204e-006
+field stddev 5.3243192304582e-005
+field min 0
+field max 0.000563282881
+field sum 0.00875022903
+field sqrsum 3.0770922534862e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-8.9052142e-005	0
+bin	-7.7178523066667e-005	0
+bin	-6.5304904133333e-005	0
+bin	-5.34312852e-005	0
+bin	-4.1557666266667e-005	0
+bin	-2.9684047333333e-005	0
+bin	-1.78104284e-005	0
+bin	-5.9368094666667e-006	1022
+bin	5.9368094666667e-006	5
+bin	1.78104284e-005	1
+bin	2.9684047333333e-005	1
+bin	4.1557666266667e-005	0
+bin	5.34312852e-005	1
+bin	6.5304904133333e-005	2
+bin	7.7178523066667e-005	1
+bin	8.9052142e-005	0
+bin	0.00010092576093333	0
+bin	0.00011279937986667	2
+bin	0.0001246729988	1
+bin	0.00013654661773333	0
+bin	0.00014842023666667	1
+bin	0.0001602938556	1
+bin	0.00017216747453333	6
+bin	0.00018404109346667	1
+bin	0.0001959147124	0
+bin	0.00020778833133333	0
+bin	0.00021966195026667	1
+bin	0.0002315355692	1
+bin	0.00024340918813333	0
+bin	0.00025528280706667	1
+bin	0.000267156426	13
+scalar StarLAN.router.eth[8].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[8].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[8].queue.dataQueue rcvdPk:count 1061
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[8].queue.dataQueue rcvdPk:sum(packetBytes) 661799
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[8].mac "simulated time" 20
+scalar StarLAN.router.eth[8].mac full-duplex 1
+scalar StarLAN.router.eth[8].mac "frames/sec sent" 70.9
+scalar StarLAN.router.eth[8].mac "frames/sec rcvd" 69.1
+scalar StarLAN.router.eth[8].mac "bits/sec sent" 342332.8
+scalar StarLAN.router.eth[8].mac "bits/sec rcvd" 341411.2
+scalar StarLAN.router.eth[8].mac "rx channel idle (%)" 96.541664
+scalar StarLAN.router.eth[8].mac "rx channel utilization (%)" 3.458336
+scalar StarLAN.router.eth[8].mac "rx channel collision (%)" 0
+scalar StarLAN.router.eth[8].mac collisions 0
+scalar StarLAN.router.eth[8].mac backoffs 0
+scalar StarLAN.router.eth[8].mac backoff:count 0
+attr interpolationmode none
+attr title "backoff, count"
+scalar StarLAN.router.eth[8].mac collision:count 0
+attr interpolationmode none
+attr title "collision, count"
+scalar StarLAN.router.eth[8].mac rxPkFromHL:count 1061
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.router.eth[8].mac rxPkFromHL:sum(packetBytes) 661799
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[8].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.router.eth[8].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.router.eth[8].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.router.eth[8].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.router.eth[8].mac txPk:count 1061
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.router.eth[8].mac txPk:sum(packetBytes) 661799
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.router.eth[8].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.router.eth[8].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.router.eth[8].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.router.eth[8].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.router.eth[8].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.router.eth[8].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.router.eth[8].mac rxPkOk:count 1061
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.router.eth[8].mac rxPkOk:sum(packetBytes) 661799
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.router.eth[8].mac passedUpPk:count 1061
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.router.eth[8].mac passedUpPk:sum(packetBytes) 661799
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[9].queue.pauseQueue queueLength:max nan
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[9].queue.pauseQueue queueLength:timeavg nan
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[9].queue.pauseQueue queueingTime:histogram
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar StarLAN.router.eth[9].queue.pauseQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[9].queue.pauseQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[9].queue.pauseQueue rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[9].queue.pauseQueue rcvdPk:sum(packetBytes) 0
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[9].queue.dataQueue queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar StarLAN.router.eth[9].queue.dataQueue queueLength:timeavg 0.00030331169095603
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+statistic StarLAN.router.eth[9].queue.dataQueue queueingTime:histogram
+field count 1036
+field mean 4.3868661891892e-006
+field stddev 3.7862647119845e-005
+field min 0
+field max 0.000571379004
+field sum 0.004544793372
+field sqrsum 1.5036927489446e-006
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.000245863876	0
+bin	-0.00021308202586667	0
+bin	-0.00018030017573333	0
+bin	-0.0001475183256	0
+bin	-0.00011473647546667	0
+bin	-8.1954625333333e-005	0
+bin	-4.91727752e-005	0
+bin	-1.6390925066667e-005	1016
+bin	1.6390925066667e-005	2
+bin	4.91727752e-005	3
+bin	8.1954625333333e-005	0
+bin	0.00011473647546667	2
+bin	0.0001475183256	2
+bin	0.00018030017573333	2
+bin	0.00021308202586667	2
+bin	0.000245863876	2
+bin	0.00027864572613333	1
+bin	0.00031142757626667	1
+bin	0.0003442094264	0
+bin	0.00037699127653333	0
+bin	0.00040977312666667	0
+bin	0.0004425549768	0
+bin	0.00047533682693333	1
+bin	0.00050811867706667	0
+bin	0.0005409005272	2
+bin	0.00057368237733333	0
+bin	0.00060646422746667	0
+bin	0.0006392460776	0
+bin	0.00067202792773333	0
+bin	0.00070480977786667	0
+bin	0.000737591628	0
+scalar StarLAN.router.eth[9].queue.dataQueue dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar StarLAN.router.eth[9].queue.dataQueue dropPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, sum(packetBytes)"
+scalar StarLAN.router.eth[9].queue.dataQueue rcvdPk:count 1036
+attr interpolationmode none
+attr title "received packets, count"
+scalar StarLAN.router.eth[9].queue.dataQueue rcvdPk:sum(packetBytes) 392561
+attr interpolationmode none
+attr title "received packets, sum(packetBytes)"
+scalar StarLAN.router.eth[9].mac "simulated time" 20
+scalar StarLAN.router.eth[9].mac full-duplex 1
+scalar StarLAN.router.eth[9].mac "frames/sec sent" 70.5
+scalar StarLAN.router.eth[9].mac "frames/sec rcvd" 68.7
+scalar StarLAN.router.eth[9].mac "bits/sec sent" 210378
+scalar StarLAN.router.eth[9].mac "bits/sec rcvd" 209456.4
+scalar StarLAN.router.eth[9].mac "rx channel idle (%)" 97.861468
+scalar StarLAN.router.eth[9].mac "rx channel utilization (%)" 2.138532
+scalar StarLAN.router.eth[9].mac "rx channel collision (%)" 0
+scalar StarLAN.router.eth[9].mac collisions 0
+scalar StarLAN.router.eth[9].mac backoffs 0
+scalar StarLAN.router.eth[9].mac backoff:count 0
+attr interpolationmode none
+attr title "backoff, count"
+scalar StarLAN.router.eth[9].mac collision:count 0
+attr interpolationmode none
+attr title "collision, count"
+scalar StarLAN.router.eth[9].mac rxPkFromHL:count 1036
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, count"
+scalar StarLAN.router.eth[9].mac rxPkFromHL:sum(packetBytes) 392561
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar StarLAN.router.eth[9].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar StarLAN.router.eth[9].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar StarLAN.router.eth[9].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar StarLAN.router.eth[9].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar StarLAN.router.eth[9].mac txPk:count 1036
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, count"
+scalar StarLAN.router.eth[9].mac txPk:sum(packetBytes) 392561
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, sum(packetBytes)"
+scalar StarLAN.router.eth[9].mac droppedPkNotForUs:count 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, count"
+scalar StarLAN.router.eth[9].mac droppedPkNotForUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkNotForUs
+attr title "packets dropped/not for us, sum(packetBytes)"
+scalar StarLAN.router.eth[9].mac droppedPkBitError:count 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, count"
+scalar StarLAN.router.eth[9].mac droppedPkBitError:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkBitError
+attr title "packets dropped/bit error, sum(packetBytes)"
+scalar StarLAN.router.eth[9].mac droppedPkIfaceDown:count 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, count"
+scalar StarLAN.router.eth[9].mac droppedPkIfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source dropPkIfaceDown
+attr title "packets dropped/interface down, sum(packetBytes)"
+scalar StarLAN.router.eth[9].mac rxPkOk:count 1036
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar StarLAN.router.eth[9].mac rxPkOk:sum(packetBytes) 392561
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar StarLAN.router.eth[9].mac passedUpPk:count 1036
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar StarLAN.router.eth[9].mac passedUpPk:sum(packetBytes) 392561
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+

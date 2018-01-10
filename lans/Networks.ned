@@ -40,9 +40,8 @@ import ned.DatarateChannel;
 channel cable extends DatarateChannel
 {
     parameters:
-        //delay = 0.1us;
-        delay = 100ms;
-        datarate = 100Mbps;
+        delay = default(0.1us);
+        datarate = default(10Mbps);
 }
 
 //
@@ -120,7 +119,7 @@ network ringWithRoutersLAN
             parameters: 
                @display("p=100,100,ri,200,200");
         }
-        router[numHosts]: Router {
+        router[numHosts]: EtherSwitch {
             @display("is=s");
             @display("p=150,150,ri,150,150");
         }
@@ -149,7 +148,7 @@ network StarLAN
         //    parameters:
         //        @display("p=300,300");
         //}
-        router: Router {
+        router: EtherSwitch {
             @display("is=s");
         }
 		configurator: IPv4NetworkConfigurator {
