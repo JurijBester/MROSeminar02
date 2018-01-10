@@ -192,3 +192,37 @@ network MeshLAN
             router[i].ethg++ <--> cable <--> router[j+1].ethg++;
         }
 }
+
+network MeshPC_LAN
+{
+	submodules:
+        host[10]: StandardHost {
+            parameters:
+                @display("p=100,100,ri,200,200");
+        }
+        router[5]: Router {
+            @display("is=s");
+            @display("p=150,150,ri,150,150");
+        }
+        configurator: IPv4NetworkConfigurator {
+            @display("p=59,31");
+         }
+        connections:
+            host[0].ethg++ <--> cable <--> router[0].ethg++;
+            host[1].ethg++ <--> cable <--> router[1].ethg++;
+            host[2].ethg++ <--> cable <--> router[1].ethg++;
+            host[3].ethg++ <--> cable <--> router[2].ethg++;
+            host[4].ethg++ <--> cable <--> router[2].ethg++;
+            host[5].ethg++ <--> cable <--> router[3].ethg++;
+            host[6].ethg++ <--> cable <--> router[3].ethg++;
+            host[7].ethg++ <--> cable <--> router[3].ethg++;
+            host[8].ethg++ <--> cable <--> router[4].ethg++;
+            host[9].ethg++ <--> cable <--> router[0].ethg++;
+            
+       		router[0].ethg++ <--> cable <--> router[1].ethg++;
+       		router[0].ethg++ <--> cable <--> router[4].ethg++;       		
+       		router[1].ethg++ <--> cable <--> router[3].ethg++;
+       		router[2].ethg++ <--> cable <--> router[3].ethg++;
+       		router[3].ethg++ <--> cable <--> router[4].ethg++;
+       		router[2].ethg++ <--> cable <--> router[4].ethg++;
+}
